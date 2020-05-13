@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>효성직업전문학교</title>
+</head>
+<link href="https://github.com/gshn/fonts/blob/master/NotoSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/SpoqaHanSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumBarunGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumSquare/fonts.css" rel="stylesheet">
+
+<style>
+    * {
+        text-align: center;
+        text-decoration: none;
+        list-style: none;
+        background-color: #fff;
+        margin: 0 auto;
+        padding: 0;
+        vertical-align: middle;
+    }
+
+    a,
+    b,
+    p,
+    h4,
+    br,
+    ul,
+    li,
+    font,
+    div {
+        background-color: transparent;
+    }
+
+    .logo {
+        display: inline-block;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: -30px;
+        z-index: 10;
+    }
+
+    .grid_1 {
+        display: grid;
+        max-width: 1200px;
+        margin-top: 40px;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-gap: 40px;
+        align-items: stretch;
+    }
+
+    .box_cell {
+        width: 320px;
+        height: 320px;
+        display: inline-block;
+        margin: 16px;
+        overflow: hidden;
+    }
+
+    .T001 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t001.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+    }
+
+    .T002 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t002.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+    }
+
+    .T003 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t003.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+    }
+
+    .T004 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t004.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+    }
+
+    .T005 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t005.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+    }
+
+    .T006 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t006.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+    }
+
+    .box_cell a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .box_void {
+        width: 320px;
+        height: 160px;
+    }
+
+    .box_text {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        width: 320px;
+        height: 160px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .box_text p {
+        font-size: 0.9em;
+    }
+
+    .popup {
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: left;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 100;
+    }
+
+    .popup_background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+    }
+
+    .popup-state {
+        display: none;
+    }
+
+    .popup-state:checked+.popup {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .popup_inner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        overflow: auto;
+        background: #fff;
+        border-radius: 5px;
+        padding: 1em 2em;
+    }
+
+    .grid_1_inner {
+        display: grid;
+        max-width: 960px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 20px;
+        align-items: stretch;
+    }
+
+    .grid_1_inner_2 {
+        display: grid;
+        max-width: 960px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-gap: 20px;
+        align-items: stretch;
+    }
+
+    .inner_A {
+        font-size: 0.8em;
+    }
+
+    .inner_B {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .inner_C {
+        font-size: 1em;
+    }
+
+    .popup_inner img {
+        width: 97.5%;
+        max-width: 1000px;
+    }
+
+    .popup-button_close {
+        position: fixed;
+        right: 16px;
+        top: 16px;
+        width: 32px;
+        height: 32px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .popup-button_close:after,
+    .popup-button_close:before {
+        position: absolute;
+        width: 2px;
+        height: 1.5em;
+        background: transparent;
+        display: block;
+        left: 50%;
+        margin: -3px 0 0 -1px;
+        top: 0;
+    }
+
+    .popup-button_close:hover:after,
+    .popup-button_close:hover:before {
+        background: #aaa;
+    }
+
+    .popup-button_launch {
+        cursor: pointer;
+        background: #27ae60;
+        display: inline-block;
+        padding: .5em 1em;
+        color: #fff;
+        border-radius: 3px;
+    }
+
+    .popup-button_launch:hover,
+    .popup-button_launch:focus {
+        background: #2ecc71;
+    }
+
+    .popup_launch {
+        cursor: pointer;
+        display: inline-block;
+        color: #fff;
+    }
+
+    .qna {
+        width: 100%;
+        background-color: #eee;
+        padding: 40px 0px;
+    }
+
+    .qna h2 {
+        width: 200px;
+        height: 36px;
+        padding: 10px;
+        color: white;
+        background-color: dodgerblue;
+        border-radius: 36px;
+    }
+
+    .qna label {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .qna label p {
+        width: 100%;
+    }
+
+    #toggle_1,
+    #answer_1,
+    #toggle_2,
+    #answer_2,
+    #toggle_3,
+    #answer_3,
+    #toggle_4,
+    #answer_4,
+    #toggle_5,
+    #answer_5,
+    #toggle_6,
+    #answer_6 {
+        display: none;
+    }
+
+    #toggle_1:checked+#answer_1,
+    #toggle_2:checked+#answer_2,
+    #toggle_3:checked+#answer_3,
+    #toggle_4:checked+#answer_4,
+    #toggle_5:checked+#answer_5,
+    #toggle_6:checked+#answer_6 {
+        display: block;
+    }
+
+    #answer_1,
+    #answer_2,
+    #answer_3,
+    #answer_4,
+    #answer_5,
+    #answer_6 {
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.375));
+        padding: 20px 0;
+    }
+
+    .shortcut {
+        width: 100%;
+        background-color: #ddd;
+        padding: 40px 0px;
+    }
+
+    .shortcut .grid_2 {
+        display: grid;
+        max-width: 600px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 20px 0px;
+        align-items: stretch;
+    }
+
+    .shortcut .grid_2>article img {
+        width: 72px;
+    }
+
+    footer {
+        background-color: #ccc;
+        color: white;
+        padding: 40px 0px;
+    }
+</style>
+
+<script src='http://code.jquery.com/jquery-1.12.3.min.js'></script>
+<script>
+    function goTop() {
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+<body>
+    <nav class="title" id="title">
+        <div class="logo">
+            <a onclick="goTop()">효성직업전문학교</a>
+        </div>
+    </nav>
+
+    <div class="grid_1">
+        <article>
+            <label class="popup_launch" for="popup-open_1">
+                <div class="T001">
+                    <div class="box_void"></div>
+                    <div class="box_text">
+                        <h4>
+                            3D 프린터운용<br>
+                            (3D 프린터 운용 기술자격 2급)
+                        </h4>
+                        <p>
+                            <br>
+                            캐드를 활용한 도면, 3D형상 모델링 작업부터<br>
+                            3D프린터 이론, 실습 및 자격증까지 한번에!
+                        </p>
+                    </div>
+                </div>
+            </label>
+        </article>
+        <article>
+            <label class="popup_launch" for="popup-open_2">
+                <div class="T002">
+                    <div class="box_void"></div>
+                    <div class="box_text">
+                        <h4>
+                            기계설계산업기사<br>
+                            자격증 취득 (AutoCAD)
+                        </h4>
+                        <p>
+                            <br>
+                            수료시, 기계설계산업기사 자격증 자동 취득<br>
+                            (단, 내·외부 평가 합격시 발행가능)
+                        </p>
+                    </div>
+                </div>
+            </label>
+        </article>
+        <article>
+            <label class="popup_launch" for="popup-open_3">
+                <div class="T003">
+                    <div class="box_void"></div>
+                    <div class="box_text">
+                        <h4>
+                            "구직자과정"<br>
+                            전산세무회계자격증
+                        </h4>
+                        <p>
+                            <br>
+                            전산회계 1급, 전산세무 2급 자격증 대비반<br>
+                            고용노동부에서 75%~100% 훈련비 지원
+                        </p>
+                    </div>
+                </div>
+            </label>
+        </article>
+        <article>
+            <label class="popup_launch" for="popup-open_4">
+                <div class="T004">
+                    <div class="box_void"></div>
+                    <div class="box_text">
+                        <h4>
+                            UI/UX 기반<br>
+                            웹 크리에이터 입문
+                        </h4>
+                        <p>
+                            <br>
+                            포토샵, 일러스트를 활용한 UI디자인부터<br>
+                            웹코딩(PHP, HTML, CSS)까지 배우는 훈련과정
+                        </p>
+                    </div>
+                </div>
+            </label>
+        </article>
+        <article>
+            <label class="popup_launch" for="popup-open_5">
+                <div class="T005">
+                    <div class="box_void"></div>
+                    <div class="box_text">
+                        <h4>
+                            "구직자과정"<br>
+                            미용사(피부)자격증취득
+                        </h4>
+                        <p>
+                            <br>
+                            국가공인 미용사(피부) 자격증 취득 대비반<br>
+                            고용노동부에서 65%~100% 훈련비 지원<br>
+                            (재료/교재지원)
+                        </p>
+                    </div>
+                </div>
+            </label>
+        </article>
+        <article>
+            <label class="popup_launch" for="popup-open_6">
+                <div class="T006">
+                    <div class="box_void"></div>
+                    <div class="box_text">
+                        <h4>
+                            "직장인과정"<br>
+                            3D프린터를 활용한 3D모델링
+                        </h4>
+                        <p>
+                            <br>
+                            AutoCAD를 몰라도 OK!<br>
+                            기초부터 배우는 3D프린터<br>
+                            고용노동부에서 80%~100% 훈련비 지원
+                        </p>
+                    </div>
+                </div>
+            </label>
+        </article>
+    </div>
+
+
+
+    <input class="popup-state" id="popup-open_1" type="checkbox">
+    <div class="popup">
+        <label class="popup_background" for="popup-open_1"></label>
+        <div class="popup_inner">
+            <label class="popup-button_close" for="popup-open_1">&times;</label>
+
+            <div class="grid_1_inner">
+                <article>
+                    <font class="inner_A">과정명</font><br>
+                    <font class="inner_B" color="olive">3D 프린터 운용</font><br>
+                    <font class="inner_C">(3D 프린터 운용 기술자격 2급)</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육기간</font><br>
+                    <font class="inner_B">2019.10.08 ~ 2020.03.18</font><br>
+                    <font class="inner_C">(평일. 월, 화, 수, 목, 금)</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육시간</font><br>
+                    <font class="inner_B">09:00 ~ 17:40</font><br>
+                    <font class="inner_C">(1일 8시간)</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육장소</font><br>
+                    <font class="inner_B">2강의실</font>
+                </article>
+                <article>
+                    <font class="inner_A">담당교사</font><br>
+                    <font class="inner_B">조인희, 김봉환</font>
+                </article>
+                <article>
+                    <font class="inner_A">모집인원</font><br>
+                    <font class="inner_B">20명</font>
+                </article>
+            </div>
+
+            <img src="../portfolio2B/resources/port2B_pop1.png">
+        </div>
+    </div>
+
+    <input class="popup-state" id="popup-open_2" type="checkbox">
+    <div class="popup">
+        <label class="popup_background" for="popup-open_2"></label>
+        <div class="popup_inner">
+            <label class="popup-button_close" for="popup-open_2">&times;</label>
+
+            <div class="grid_1_inner">
+                <article>
+                    <font class="inner_A">과정명</font><br>
+                    <font class="inner_B" color="olive">기계 설계 산업기사 자격증 취득 B</font><br>
+                    <font class="inner_C">(과정평가형)</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육기간</font><br>
+                    <font class="inner_B">2019.11.15 ~ 2020.04.27</font><br>
+                    <font class="inner_C">(평일. 월, 화, 수, 목, 금)</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육시간</font><br>
+                    <font class="inner_B">09:00 ~ 17:30</font><br>
+                    <font class="inner_C">(1일 1시간)</font>
+                </article>
+                <article>
+                    <font class="inner_A">모집인원</font><br>
+                    <font class="inner_B">20명</font>
+                </article>
+            </div>
+
+            <img src="../portfolio2B/resources/port2B_pop2.png">
+        </div>
+    </div>
+
+    <input class="popup-state" id="popup-open_3" type="checkbox">
+    <div class="popup">
+        <label class="popup_background" for="popup-open_3"></label>
+        <div class="popup_inner">
+            <label class="popup-button_close" for="popup-open_3">&times;</label>
+
+            <div class="grid_1_inner">
+                <article>
+                    <font class="inner_A">과정명</font><br>
+                    <font class="inner_B" color="olive">전산회계 1급, 세무회계 2급<br>
+                        자격증 취득 과정</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육기간</font><br>
+                    <font class="inner_B">2019.10.19 ~ 2019.12.18</font><br>
+                    <font class="inner_C">(평일. 월, 화, 수, 목, 금)</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육시간</font><br>
+                    <font class="inner_B">09:00 ~ 17:40</font><br>
+                    <font class="inner_C">(1일 6시간)</font>
+                </article>
+                <article>
+                    <font class="inner_A">모집인원</font><br>
+                    <font class="inner_B">13명</font>
+                </article>
+            </div>
+
+            <img src="../portfolio2B/resources/port2B_pop3.png">
+        </div>
+    </div>
+
+    <input class="popup-state" id="popup-open_4" type="checkbox">
+    <div class="popup">
+        <label class="popup_background" for="popup-open_4"></label>
+        <div class="popup_inner">
+            <label class="popup-button_close" for="popup-open_4">&times;</label>
+
+            <div class="grid_1_inner">
+                <article>
+                    <font class="inner_A">과정명</font><br>
+                    <font class="inner_B" color="olive">UI / UX 기반 웹 크리에이터 입문</font><br>
+                    <font class="inner_C">(웹 퍼블리셔 / 웹 디자이너 / 웹 개발)</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육기간</font><br>
+                    <font class="inner_B">2019.10.18 ~ 2020.04.08</font><br>
+                    <font class="inner_C">(평일. 월, 화, 수, 목, 금)</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육시간</font><br>
+                    <font class="inner_B">09:00 ~ 17:40</font><br>
+                    <font class="inner_C">(1일 8시간)</font>
+                </article>
+                <article>
+                    <font class="inner_A">모집인원</font><br>
+                    <font class="inner_B">20명</font>
+                </article>
+            </div>
+
+            <img src="../portfolio2B/resources/port2B_pop4.png">
+        </div>
+    </div>
+
+    <input class="popup-state" id="popup-open_5" type="checkbox">
+    <div class="popup">
+        <label class="popup_background" for="popup-open_5"></label>
+        <div class="popup_inner">
+            <label class="popup-button_close" for="popup-open_5">&times;</label>
+
+            <div class="grid_1_inner">
+                <article>
+                    <font class="inner_A">과정명</font><br>
+                    <font class="inner_B" color="olive">미용사 (피부) 자격증 취득</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육기간</font><br>
+                    <font class="inner_B">2019.12.05 ~ 2020.02.11</font><br>
+                    <font class="inner_C">(평일. 월, 화, 수, 목, 금)</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육시간</font><br>
+                    <font class="inner_B">09:30 ~ 16:00</font><br>
+                    <font class="inner_C">(1일 6시간)</font>
+                </article>
+                <article>
+                    <font class="inner_A">모집인원</font><br>
+                    <font class="inner_B">20명</font>
+                </article>
+            </div>
+
+            <img src="../portfolio2B/resources/port2B_pop5.png">
+        </div>
+    </div>
+
+    <input class="popup-state" id="popup-open_6" type="checkbox">
+    <div class="popup">
+        <label class="popup_background" for="popup-open_6"></label>
+        <div class="popup_inner">
+            <label class="popup-button_close" for="popup-open_6">&times;</label>
+
+            <div class="grid_1_inner">
+                <article>
+                    <font class="inner_A">과정명</font><br>
+                    <font class="inner_B" color="olive">3D프린터를 활용한 3D모델링</font><br>
+                    <font class="inner_C">(AUTO CAD, 3D프린터)</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육기간</font><br>
+                    <font class="inner_B">2019.10.16 ~ 2019.11.28</font><br>
+                    <font class="inner_C">(월, 수, 목)</font>
+                </article>
+                <article>
+                    <font class="inner_A">교육시간</font><br>
+                    <font class="inner_B">19:10 ~ 22:10</font><br>
+                    <font class="inner_C">(1일 3시간)</font>
+                </article>
+                <article>
+                    <font class="inner_A">모집인원</font><br>
+                    <font class="inner_B">15명</font>
+                </article>
+            </div>
+
+            <br><br>
+
+            <font class="inner_B">직장인과정</font><br>
+            <font class="inner_A">내일배움카드 훈련과정</font><br>
+
+            <div class="grid_1_inner_2">
+                <article style="border-bottom: 2px solid #999">
+                    <font class="inner_A">1. 교육생 지원</font><br>
+                    <font class="inner_B"> 교육비 : \326,280원<br>
+                        자비부담액 : 0% ~ 20%</font><br>
+                    <font class="inner_C">(0원 ~ 65,256원)</font><br><br><br>
+                    <font class="inner_A">2. 교육지원 대상자</font><br>
+                    <font class="inner_B">직장에 재직중인 근로자</font><br><br>
+                </article>
+
+                <article style="border-bottom: 2px solid #999">
+                    <font class="inner_A">3. 지원절차</font><br>
+                    <font class="inner_C">
+                        ①<br>
+                        온라인·전화 접수<br><br>
+                        ▼<br><br>
+                        ②<br>
+                        내일배움카드 신청 (고용센터)<br><br>
+                        ▼<br><br>
+                        ③<br>
+                        훈련생 등록 확정
+                    </font><br><br>
+                </article>
+
+                <article style="border-bottom: 2px solid #999">
+                    <font class="inner_A">4-A. 교육내용</font><br>
+                    <font class="inner_C"><br>
+                        ①<br>
+                        AUTO CAD 프로그램을 사용자 작업 환경에 맞도록 설정하고,<br>
+                        모델링하는 능력을 함양 할 수 있다.<br><br>
+                        ②<br>
+                        3D프린터에 적합한 슬라이서 및 하드웨어를 세팅하고<br>
+                        출력을 위한 최적한 상태를 만드는 능력을 함양 할 수 있다.<br><br>
+                        ③<br>
+                        3D프린터디자인 데이터를<br>
+                        입체형태로 결과물을 출력하는 능력을 함양 할 수 있다.
+                    </font><br><br>
+                </article>
+
+                <article style="border-bottom: 2px solid #999">
+                    <font class="inner_A">4-B. 커리큘럼</font><br><br>
+                    <font class="inner_C">Course 01 - 3D형상 모델링 작업</font><br><br>
+                    <font class="inner_B">
+                        3D프린팅 세팅<br><br>
+                        3D프린팅 구현
+                    </font><br><br>
+                </article>
+            </div>
+        </div>
+    </div>
+
+
+
+    <br><br>
+
+    <div id="qna" class="qna">
+        <h2>자주하는 질문</h2>
+        <br>
+
+        <label for="toggle_1" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                훈련 수당이 뭐예요? 어떻게 받을 수 있나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_1">
+        <div id="answer_1">
+            <p>
+                훈련수당은 고용노동부에서 식비 및 교통비 등의 명목으로<br>
+                매달 수강생들에게 지원해드리는 수당입니다.<br><br>
+
+                전월 80%이상 출석 시 지급되며, 매월 지급됩니다.<br>
+
+                훈련과정마다 훈련수당이 상이함으로 관심있는 분야의 훈련수당이 궁금하시다면<br>
+
+                유선문의: 746-8768 / 톡플러스 / 카카오톡(@효성직업전문학교) 등으로 편하게 문의 바랍니다. :)
+            </p>
+        </div>
+
+        <br><br>
+
+        <label for="toggle_2" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                과정 상담을 받고 싶은데 어떻게 해야 하나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_2">
+        <div id="answer_2">
+            <p>
+                홈페이지 입학 상담에 글을 남겨주시거나,<br>전화 상담(746-8768) / 플러스톡 / 카카오톡(@효성직업전문학교) 등<br>
+
+                편하신 쪽으로 문의하시면 담당자가 회신 드립니다 :D<br>
+
+                빠른 안내를 원하시면 전화 상담을 추천드립니다.
+            </p>
+        </div>
+
+        <br><br>
+
+        <label for="toggle_3" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                수강신청은 어떻게 하나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_3">
+        <div id="answer_3">
+            <p>
+                홈페이지로 온라인 접수하시거나, 전화로 수강 접수 하시면<br>
+                수강 신청 과정을 안내받으실 수 있습니다. :D
+            </p>
+        </div>
+
+        <br><br>
+
+        <label for="toggle_4" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                어떻게 무료로 수업을 들을수가 있나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_4">
+        <div id="answer_4">
+            <p>
+                고용노동부가 지정한 국가기간전략산업직종 수업을 수강하시거나,<br> 내일배움카드제, 취업성공패키지 등의 제도의 지원 대상자가 되면<br>
+                국비 지원을 받아 교육 수강이 가능합니다.<br><br>
+
+                국가기간전략산업직종으로 지정된 수업을 수강하실때는<br>
+                누구나 100% 수강료를 지원받아 무료로 수강이
+                가능하지만, <br>
+                그외 제도의 경우에는 개인별로 지원 금액이 다를 수 있습니다.<br><br>
+
+                본인이 얼마만큼 지원받을 수 있는지 확인하고 싶으시면<br>
+                746-8768 / 톡플러스 / 카카오톡(@효성직업전문학교)등으로 편하게 문의 바랍니다. :)
+            </p>
+        </div>
+
+        <br><br>
+
+        <label for="toggle_5" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                지원자격은 어떻게 되나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_5">
+        <div id="answer_5">
+            <p>
+                만 15세 이상의 취업희망자면 학력 관계없이 누구나 지원가능합니다~!<br><br>
+
+                ※ 다만 재학생 및 휴학생은 국비지원 대상자에서 제외됩니다.<br><br>
+
+                ※※ 졸업예정자, 졸업유예자, 야간대, 방송통신대,<br> 사이버대 재학생, 비진학 고등학교 3학년 재학생은 국비지원이 가능합니다 . :D
+            </p>
+        </div>
+
+        <br><br>
+
+        <label for="toggle_6" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                비전공자도 배울 수 있나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_6">
+        <div id="answer_6">
+            <p>
+                네, 물론입니다:)<br><br>
+
+                비전공자도 충분히 따라올 수 있도록<br>
+                기초부터 심화까지 촘촘하게 학습과정이 짜여져 있으니,<br>
+                걱정마시고 편하게 수강문의 바랍니다.
+            </p>
+        </div>
+
+        <br><br>
+
+    </div>
+
+    <div class="shortcut">
+        <div class="grid_2">
+            <article>
+                <a href="tel:051-746-8768">
+                    <img src="resources/scc_1.png" style="background-color: #ddd">
+                </a>
+            </article>
+            <article>
+                <a href="http://www.hscampus.com/BBS/msList.php?tId=entrance">
+                    <img src="resources/scc_2.png" style="background-color: #ddd">
+                </a>
+            </article>
+            <article>
+                <a href="http://www.hscampus.com/SUB/?ctId=53">
+                    <img src="resources/scc_3.png" style="background-color: #ddd">
+                </a>
+            </article>
+            <article>
+                <a href="https://pf.kakao.com/_FmNaxl">
+                    <img src="resources/scc_4.png" style="background-color: #ddd">
+                </a>
+            </article>
+            <article>
+                <a href="https://blog.naver.com/hshrd">
+                    <img src="resources/scc_5.png" style="background-color: #ddd">
+                </a>
+            </article>
+            <article>
+                <a href="https://www.instagram.com/hyosungbook/?hl=ko">
+                    <img src="resources/scc_6.png" style="background-color: #ddd">
+                </a>
+            </article>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 효성직업전문학교 2019. All Rights Reserved.</p>
+        <ul>
+            <li style="padding: 20px 0px">
+                <a href="#" style="color: #777">개인정보취급방침</a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>

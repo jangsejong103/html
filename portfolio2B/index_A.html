@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>효성직업전문학교</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/new-age.min.css" rel="stylesheet">
+
+</head>
+
+<style>
+    * {
+        text-align: center;
+        text-decoration: none;
+        list-style: none;
+        background-color: #ddd;
+        margin: 0 auto;
+        padding: 0;
+        vertical-align: middle;
+    }
+
+    a,
+    b,
+    p,
+    h3,
+    br,
+    ul,
+    li,
+    font,
+    div {
+        background-color: transparent;
+    }
+
+    .grid_1 {
+        display: grid;
+        max-width: 1200px;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-gap: 40px;
+        align-items: stretch;
+    }
+
+    .box_cell {
+        width: 320px;
+        height: 320px;
+        display: inline-block;
+        margin: 16px;
+        overflow: hidden;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .T001 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t001.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .T002 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t002.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .T003 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t003.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .T004 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t004.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .T005 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t005.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .T006 {
+        width: 320px;
+        height: 320px;
+        background-image: url("resources/t006.jpg");
+        background-size: 320px;
+        background-repeat: no-repeat;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .box_cell a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .box_void {
+        width: 320px;
+        height: 160px;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .box_text {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        width: 320px;
+        height: 160px;
+        padding: 8px;
+        display: table-cell;
+        vertical-align: middle;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .box_cell:hover .box_text {
+        width: 360px;
+        height: 360px;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.25s ease-in-out;
+    }
+
+    .box_cell:hover .box_void {
+        height: 0px;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .box_text p {
+        display: none;
+    }
+
+    .box_cell:hover .box_text p {
+        display: block;
+    }
+
+    .qna {
+        width: 100%;
+        background-color: #eee;
+        padding: 40px 0px;
+    }
+
+    .qna h2 {
+        width: 200px;
+        height: 36px;
+        padding: 10px;
+        color: white;
+        background-color: dodgerblue;
+        border-radius: 36px;
+    }
+
+    .qna label {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .qna label p {
+        width: 100%;
+    }
+
+    #toggle_1,
+    #answer_1,
+    #toggle_2,
+    #answer_2,
+    #toggle_3,
+    #answer_3,
+    #toggle_4,
+    #answer_4,
+    #toggle_5,
+    #answer_5,
+    #toggle_6,
+    #answer_6 {
+        display: none;
+    }
+
+    #toggle_1:checked+#answer_1,
+    #toggle_2:checked+#answer_2,
+    #toggle_3:checked+#answer_3,
+    #toggle_4:checked+#answer_4,
+    #toggle_5:checked+#answer_5,
+    #toggle_6:checked+#answer_6 {
+        display: block;
+    }
+
+    #answer_1,
+    #answer_2,
+    #answer_3,
+    #answer_4,
+    #answer_5,
+    #answer_6 {
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.375));
+        padding: 20px 0;
+    }
+
+    .shortcut {
+        width: 100%;
+        background-color: #ccc;
+        padding: 40px 0px;
+    }
+
+    .shortcut .grid_2 {
+        display: grid;
+        max-width: 600px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 20px 0px;
+        align-items: stretch;
+    }
+
+    .shortcut .grid_2>article img {
+        width: 72px;
+    }
+
+</style>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">효성직업전문학교</a>
+        </div>
+    </nav>
+
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100">
+
+            </div>
+        </div>
+    </header>
+
+    <div class="grid_1">
+        <article>
+            <div class="T001">
+                <div class="box_void"></div>
+                <div class="box_text">
+                    <h3>
+                        3D 프린터운용<br>
+                        (3D 프린터 운용 기술자격 2급)
+                    </h3>
+                    <p>
+                        <br>
+                        캐드를 활용한 도면, 3D형상 모델링 작업부터<br>
+                        3D프린터 이론, 실습 및 자격증까지 한번에!
+                    </p>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="T002">
+                <div class="box_void"></div>
+                <div class="box_text">
+                    <h3>
+                        기계설계산업기사<br>
+                        자격증 취득 (AutoCAD)
+                    </h3>
+                    <p>
+                        <br>
+                        수료시, 기계설계산업기사 자격증 자동 취득<br>
+                        (단, 내·외부 평가 합격시 발행가능)
+                    </p>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="T003">
+                <div class="box_void"></div>
+                <div class="box_text">
+                    <h3>
+                        "구직자과정"<br>
+                        전산세무회계자격증
+                    </h3>
+                    <p>
+                        <br>
+                        전산회계 1급, 전산세무 2급 자격증 대비반<br>
+                        고용노동부에서 75%~100% 훈련비 지원
+                    </p>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="T004">
+                <div class="box_void"></div>
+                <div class="box_text">
+                    <h3>
+                        웹퍼블리싱 & UI/UX<br>
+                        개발자 양성과정
+                    </h3>
+                    <p>
+                        <br>
+                        웹디자인 / 웹퍼블리셔 / 웹개발자 양성과정<br>
+                        디자인(포토샵)부터 웹프로그래밍 과정까지!
+                    </p>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="T005">
+                <div class="box_void"></div>
+                <div class="box_text">
+                    <h3>
+                        "구직자과정"<br>
+                        미용사(피부)자격증취득
+                    </h3>
+                    <p>
+                        <br>
+                        국가공인 미용사(피부) 자격증 취득 대비반<br>
+                        고용노동부에서 65%~100% 훈련비 지원 (재료/교재지원)
+                    </p>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="T006">
+                <div class="box_void"></div>
+                <div class="box_text">
+                    <h3>
+                        "직장인과정"<br>
+                        전산회계1급자격증반
+                    </h3>
+                    <p>
+                        <br>
+                        전산회계1급자격증대비반 (회계정보처리1급)<br>
+                        고용노동부에서 80%~100% 훈련비 지원
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <br><br>
+
+    <div id="qna" class="qna">
+        <h2>자주하는 질문</h2>
+        <br>
+
+        <label for="toggle_1" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                훈련 수당이 뭐예요? 어떻게 받을 수 있나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_1">
+        <div id="answer_1">
+            <p>
+                훈련수당은 고용노동부에서 식비 및 교통비 등의 명목으로<br>
+                매달 수강생들에게 지원해드리는 수당입니다.<br><br>
+
+                전월 80%이상 출석 시 지급되며, 매월 지급됩니다.<br>
+
+                훈련과정마다 훈련수당이 상이함으로 관심있는 분야의 훈련수당이 궁금하시다면<br>
+
+                유선문의: 746-8768 / 톡플러스 / 카카오톡(@효성직업전문학교) 등으로 편하게 문의 바랍니다. :)
+            </p>
+        </div>
+
+        <br><br>
+
+        <label for="toggle_2" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                과정 상담을 받고 싶은데 어떻게 해야 하나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_2">
+        <div id="answer_2">
+            <p>
+                홈페이지 입학 상담에 글을 남겨주시거나,<br>전화 상담(746-8768) / 플러스톡 / 카카오톡(@효성직업전문학교) 등<br>
+
+                편하신 쪽으로 문의하시면 담당자가 회신 드립니다 :D<br>
+
+                빠른 안내를 원하시면 전화 상담을 추천드립니다.
+            </p>
+        </div>
+
+        <br><br>
+
+        <label for="toggle_3" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                수강신청은 어떻게 하나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_3">
+        <div id="answer_3">
+            <p>
+                홈페이지로 온라인 접수하시거나, 전화로 수강 접수 하시면<br>
+                수강 신청 과정을 안내받으실 수 있습니다. :D
+            </p>
+        </div>
+
+        <br><br>
+
+        <label for="toggle_4" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                어떻게 무료로 수업을 들을수가 있나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_4">
+        <div id="answer_4">
+            <p>
+                고용노동부가 지정한 국가기간전략산업직종 수업을 수강하시거나,<br> 내일배움카드제, 취업성공패키지 등의 제도의 지원 대상자가 되면<br>
+                국비 지원을 받아 교육 수강이 가능합니다.<br><br>
+
+                국가기간전략산업직종으로 지정된 수업을 수강하실때는<br>
+                누구나 100% 수강료를 지원받아 무료로 수강이
+                가능하지만, <br>
+                그외 제도의 경우에는 개인별로 지원 금액이 다를 수 있습니다.<br><br>
+
+                본인이 얼마만큼 지원받을 수 있는지 확인하고 싶으시면<br>
+                746-8768 / 톡플러스 / 카카오톡(@효성직업전문학교)등으로 편하게 문의 바랍니다. :)
+            </p>
+        </div>
+
+        <br><br>
+
+        <label for="toggle_5" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                지원자격은 어떻게 되나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_5">
+        <div id="answer_5">
+            <p>
+                만 15세 이상의 취업희망자면 학력 관계없이 누구나 지원가능합니다~!<br><br>
+
+                ※ 다만 재학생 및 휴학생은 국비지원 대상자에서 제외됩니다.<br><br>
+
+                ※※ 졸업예정자, 졸업유예자, 야간대, 방송통신대,<br> 사이버대 재학생, 비진학 고등학교 3학년 재학생은 국비지원이 가능합니다 . :D
+            </p>
+        </div>
+
+        <br><br>
+
+        <label for="toggle_6" onclick>
+            <b style="background-color: #eee; padding: 10px;">
+                비전공자도 배울 수 있나요?
+            </b>
+        </label>
+        <input type="checkbox" id="toggle_6">
+        <div id="answer_6">
+            <p>
+                네, 물론입니다:)<br><br>
+
+                비전공자도 충분히 따라올 수 있도록<br>
+                기초부터 심화까지 촘촘하게 학습과정이 짜여져 있으니,<br>
+                걱정마시고 편하게 수강문의 바랍니다.
+            </p>
+        </div>
+
+        <br><br>
+
+    </div>
+
+    <div class="shortcut">
+        <div class="grid_2">
+            <article>
+                <a href="tel:051-746-8768">
+                    <img src="resources/scc_1.png" style="background-color: #ccc">
+                </a>
+            </article>
+            <article>
+                <a href="#">
+                    <img src="resources/scc_2.png" style="background-color: #ccc">
+                </a>
+            </article>
+            <article>
+                <a href="#">
+                    <img src="resources/scc_3.png" style="background-color: #ccc">
+                </a>
+            </article>
+            <article>
+                <a href="#">
+                    <img src="resources/scc_4.png" style="background-color: #ccc">
+                </a>
+            </article>
+            <article>
+                <a href="#">
+                    <img src="resources/scc_5.png" style="background-color: #ccc">
+                </a>
+            </article>
+            <article>
+                <a href="#">
+                    <img src="resources/scc_6.png" style="background-color: #ccc">
+                </a>
+            </article>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 효성직업전문학교 2019. All Rights Reserved.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="#">개인정보취급방침</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/new-age.min.js"></script>
+
+</body>
+
+</html>
