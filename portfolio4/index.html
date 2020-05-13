@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Essential Phone | Free Yourself. Unlocked, Premium Android smartphone.</title>
+</head>
+
+<link rel="icon" type="image/gif" href="https://www.essential.com/assets/images/icons/favicon.ico">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js'></script>
+
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TSR83PD"></script>
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+      'gtm.start': new Date().getTime(), event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+      'https://www.googletagmanager.com/gtm.js?id=GTM-TSR83PD' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-TSR83PD');
+</script>
+
+<script async="" src="https://maker.me/enhance/essential.js"></script>
+
+<link rel="stylesheet" href="https://www.essential.com/css/bundle-482b15a7b9.css">
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-97642517-1', 'auto');
+  ga('require', 'ga_route_plugin');
+  function RouteGAData(tracker) {
+
+    ga(function (tracker) {
+      var originalSendHitTask = tracker.get('sendHitTask');
+      tracker.set('sendHitTask', function (model) {
+        var payLoad = model.get('hitPayload');
+        originalSendHitTask(model);
+        var request = new XMLHttpRequest();
+        var path = "https://us-central1-essential-biz-systems-dev.cloudfunctions.net/collect";
+        request.open('GET', path + "?" + payLoad, true);
+        request.send();
+      });
+    });
+  } ga('provide', 'ga_route_plugin', RouteGAData);
+
+  ga('send', 'pageview');
+</script>
+
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+
+  body {
+    color: black;
+    letter-spacing: .18em;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+  }
+
+  #fullpage .clearfix:before,
+  #fullpage .clearfix:after {
+    content: "";
+    display: table;
+  }
+
+  #fullpage .clearfix:after {
+    clear: both;
+  }
+
+  #fullpage .header-top {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 25 !important;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    font-size: 4em;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-weight: 300;
+    font-size: 2.8em;
+  }
+
+  #fp-nav ul li a span,
+  .fp-slidesNav ul li a span {
+    background: white;
+    width: 8px;
+    height: 8px;
+    margin: -4px 0 0 -4px;
+  }
+
+  #fp-nav ul li a.active span,
+  .fp-slidesNav ul li a.active span,
+  #fp-nav ul li:hover a.active span,
+  .fp-slidesNav ul li:hover a.active span {
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    background: transparent;
+    box-sizing: border-box;
+    border: 4px solid white;
+  }
+</style>
+
+<body>
+
+  <div id="fullpage">
+    <div id="siteWrapper">
+      <div id="templateLayer">
+        <div data-template="IndexTemplate"
+          data-title="Essential Phone | Free Yourself. Unlocked, Premium Android smartphone. "
+          class="template IndexTemplate ess" style="visibility: visible;">
+
+
+          <section class="vertical-scrolling">
+            <section class="ess__section phone-hero">
+              <div class="ess__section-wrapper">
+                <div class="ess__content ess__fade-in is-visible">
+                  <p class="ess__h1">Essential Phone</p>
+                  <p class="ess__h2">Simplicity stands on its own</p>
+                  <div class="ess__button-group">
+                    <a class="ess__btn ess__btn--link" href="https://www.essential.com/phone">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+
+
+          <section class="vertical-scrolling">
+            <section class="ess__section featured-accessories-section">
+              <div class="ess__section-wrapper">
+                <div class="ess__content ess__fade-in is-visible">
+                  <p class="ess__h1">Featured Accessories</p>
+                  <p class="ess__h2">
+                    360 Camera and HD Earphones<br>
+                    now on sale
+                  </p>
+                  <div class="ess__button-group">
+                    <a class="ess__btn" href="https://shop.essential.com/">Shop</a>
+                  </div>
+                </div>
+                <div class="ess__image">
+                  <img src="https://www.essential.com/assets/images/static/homepage/featured-accessories-hero.jpg">
+                </div>
+              </div>
+            </section>
+          </section>
+
+
+          <section class="vertical-scrolling">
+            <section class="ess__section android-section">
+              <div class="ess__section-wrapper">
+                <div class="ess__content">
+                  <div class="android-section__text ess__fade-in is-visible">
+                    <p class="ess__h1">Pure Android</p>
+                    <p class="ess__h2">Fast updates for a powerful experience</p>
+                    <div class="ess__button-group">
+                      <a class="ess__btn ess__btn--link" href="https://www.essential.com/blog/android-pie-essential">
+                        Learn More
+                      </a>
+                    </div>
+                  </div>
+                  <div class="android-section__video videoContainer loaded">
+                    <div class="aspect-content">
+                      <video loop="" muted="muted" playsinline="" webkit-playsinline="" crossorigin="use-credentials"
+                        poster="https://www.essential.com/assets/images/static/android_p.png" preload="auto"
+                        autoplay="autoplay">
+                        <source src="https://www.essential.com/assets/video/android_9_multitasking.mp4"
+                          type="video/mp4">
+                      </video>
+                    </div>
+                    <img draggable="false" src="https://www.essential.com/assets/images/static/phone_frame.png">
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+
+
+          <section class="vertical-scrolling">
+            <section class="ess__section vanguard-section">
+              <div class="ess__section-wrapper">
+                <div class="ess__content ess__fade-in is-visible">
+                  <p class="ess__h2" style="text-indent: -.85ch; opacity: 1;">“The New Vanguard”</p>
+                  <div class="ess__button-group">
+                    <button class="ess__btn ess__btn--outline vanguard-play-button">Watch the film</button>
+                  </div>
+                </div>
+              </div>
+              <div class="vanguard-video__wrapper">
+                <div class="aspect-content">
+                  <video class="vanguard-video" playsinline="" webkit-playsinline="" crossorigin="use-credentials"
+                    preload="auto">
+                    <source src="https://www.essential.com/assets/video/the_new_vanguard_mobile.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <section class="vertical-scrolling">
+            <section class="ess__section square-section">
+              <div class="ess__section-wrapper">
+                <a class="ess__content square-section__blog" href="https://www.essential.com/blog">
+                  <p class="ess__h2">Blog</p>
+                  <p class="ess__h3">Read what we are up to</p>
+                </a>
+                <a class="ess__content square-section__support" href="http://support.essential.com/">
+                  <p class="ess__h2">Support</p>
+                  <p class="ess__h3">Find tips, tricks, and how-to’s</p>
+                </a>
+              </div>
+            </section>
+
+            <footer style="transform: translate3d(0px, 0px, 0px); background: #F4F4F6;">
+
+              <div class="innerWrapper">
+
+                <div class="footer__column">
+                  <div class="footer__title">Products</div>
+                  <ul>
+                    <li><a href="https://www.essential.com/phone">Phone</a></li>
+                    <li><a href="https://www.essential.com/audio">Audio Adapter HD</a></li>
+                  </ul>
+                </div>
+
+
+                <div class="footer__column">
+                  <div class="footer__title">Community</div>
+                  <ul>
+                    <li><a href="https://www.essential.com/blog">Blog</a></li>
+                    <li><a href="https://support.essential.com/">Support</a></li>
+                    <li><a href="https://www.essential.com/developer/overview">Developer</a></li>
+                    <li><a href="https://www.essential.com/students" class="students">Student Program</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="footer__column">
+                  <div class="footer__title">About</div>
+                  <ul>
+                    <li>
+                      <a href="https://www.essential.com/about#about" data-path="/about" data-slug="about"
+                        class="subMenuItemText">Introduction</a>
+                    </li>
+                    <li>
+                      <a href="https://www.essential.com/about#team" data-path="/about" data-slug="team"
+                        class="subMenuItemText">Team</a>
+                    </li>
+                    <li>
+                      <a href="https://www.essential.com/about#join-us" data-path="/about" data-slug="join-us"
+                        class="subMenuItemText">Join us</a>
+                    </li>
+                    <li>
+                      <a href="https://www.essential.com/about#contact-us" data-path="/about" data-slug="contact-us"
+                        class="subMenuItemText">Contact us</a>
+                    </li>
+                    <li>
+                      <a href="https://www.essential.com/about#press-kit" data-path="/about" data-slug="press-kit"
+                        class="subMenuItemText">Press kit</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="footer__column footer__column--xl">
+                  <div class="footer__social">
+                    <a href="http://facebook.com/thisisessential" class="shareFacebook" target="_blank">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <title>facebook</title>
+                        <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a href="http://twitter.com/essential" class="shareTwitter" target="_blank">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <title>twitter</title>
+                        <path
+                          d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a href="http://instagram.com/thisisessential" class="shareInstagram" target="_blank">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <title>instagram</title>
+                        <path
+                          d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z">
+                        </path>
+                        <path
+                          d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z">
+                        </path>
+                        <path
+                          d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="footer__links" style="margin-top: 1em;">
+                    <p><a href="https://www.essential.com/legal/service-terms">Terms of Service</a></p>
+                    <p><a href="https://www.essential.com/privacy">Privacy Policy</a></p>
+                  </div>
+                  <div class="footer__copyright">
+                    <span>© Essential 2018. All rights reserved.</span>
+                    <address>380 Portage Ave, Palo Alto, California 94306</address>
+                  </div>
+                </div>
+              </div>
+
+            </footer>
+          </section>
+
+
+        </div>
+      </div>
+      <div id="fadeLayer"
+        style="background-color: rgb(244, 244, 246); display: none; opacity: 0; transform: translate3d(0px, 0px, 0px);">
+      </div>
+
+      <div id="menuLayer" class="header-top clearfix">
+
+        <nav id="MainMenu" style="height: 79px; transform: translate3d(0px, 0px, 0px);" class="light">
+
+          <div class="menuBackground" style="background-color: rgb(244, 244, 246);"></div>
+          <div class="menuBackgroundOverlay"
+            style="background-color: rgb(244, 244, 246); visibility: visible; opacity: 0; transform: translate3d(0px, 0px, 0px);">
+          </div>
+          <div class="menuWrapper">
+            <a href="https://www.essential.com/" class="logo"
+              style="fill: rgb(43, 43, 43); transform: translate3d(0px, 0px, 0px);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 20">
+                <path d="M19.4,20h20V0h-20Zm10-19a9,9,0,0,1,9,10.1,9.08,9.08,0,0,1-18.1-1h0A9.13,9.13,0,0,1,29.4,1Z">
+                </path>
+                <circle cx="9.5" cy="10.1" r="9.1"></circle>
+                <g class="essentialText">
+                  <polygon
+                    points="50.3 19.1 61.2 19.1 61.2 17.2 52.4 17.2 52.4 10.8 60.5 10.8 60.5 8.9 52.4 8.9 52.4 3 61.2 3 61.2 1 50.3 1 50.3 19.1">
+                  </polygon>
+                  <path
+                    d="M68.9,11.3a17.26,17.26,0,0,1-3.2-1.1A1.71,1.71,0,0,1,65,8.9a1.91,1.91,0,0,1,.7-1.4,3.61,3.61,0,0,1,2-.6,3.36,3.36,0,0,1,3.5,2.6L73.1,9a5.3,5.3,0,0,0-1.8-2.9A5.52,5.52,0,0,0,67.7,5a4.91,4.91,0,0,0-3.5,1.1,3.32,3.32,0,0,0-1.3,2.6,3.1,3.1,0,0,0,1,2.4,10.21,10.21,0,0,0,3.6,1.6,11.18,11.18,0,0,1,3.2,1.2,1.82,1.82,0,0,1,.8,1.6,2.09,2.09,0,0,1-.8,1.6,5,5,0,0,1-2.4.6c-2.3,0-3.6-1.2-3.8-3.6l-2,.4a5.8,5.8,0,0,0,1.7,3.7,5.64,5.64,0,0,0,4.1,1.4,5.69,5.69,0,0,0,3.9-1.2,3.72,3.72,0,0,0,1.3-2.8,3.19,3.19,0,0,0-1-2.6C71.9,12.3,70.7,11.8,68.9,11.3Z">
+                  </path>
+                  <path
+                    d="M81.3,11.3a17.26,17.26,0,0,1-3.2-1.1,1.71,1.71,0,0,1-.7-1.3,1.91,1.91,0,0,1,.7-1.4,3.61,3.61,0,0,1,2-.6,3.36,3.36,0,0,1,3.5,2.6L85.5,9a5.3,5.3,0,0,0-1.8-2.9A5.52,5.52,0,0,0,80.1,5a4.91,4.91,0,0,0-3.5,1.1,3.32,3.32,0,0,0-1.3,2.6,3.1,3.1,0,0,0,1,2.4,10.21,10.21,0,0,0,3.6,1.6,11.18,11.18,0,0,1,3.2,1.2,1.82,1.82,0,0,1,.8,1.6,2.09,2.09,0,0,1-.8,1.6,5,5,0,0,1-2.4.6c-2.3,0-3.6-1.2-3.8-3.6l-2,.4a5.8,5.8,0,0,0,1.7,3.7,6.81,6.81,0,0,0,8,.2,3.72,3.72,0,0,0,1.3-2.8,3.19,3.19,0,0,0-1-2.6C84.3,12.3,83.1,11.8,81.3,11.3Z">
+                  </path>
+                  <path
+                    d="M93.7,5a5.91,5.91,0,0,0-4.5,2,7.57,7.57,0,0,0-1.8,5.3,7.94,7.94,0,0,0,1.8,5.3,6.51,6.51,0,0,0,8.1,1,6.65,6.65,0,0,0,2.2-2.5L97.8,15a2.19,2.19,0,0,1-.3.5,3,3,0,0,1-.5.7,2.7,2.7,0,0,1-.8.7,4.18,4.18,0,0,1-1,.4,3.89,3.89,0,0,1-1.5.2,3.52,3.52,0,0,1-3.1-1.4,4.43,4.43,0,0,1-1.1-3.3H99.8v-.6a8,8,0,0,0-1.7-5.3A5.19,5.19,0,0,0,93.7,5Zm-4.1,6.2a4.36,4.36,0,0,1,1.1-2.9,3.89,3.89,0,0,1,3-1.4,3.31,3.31,0,0,1,3,1.3,5.39,5.39,0,0,1,1,3Z">
+                  </path>
+                  <path
+                    d="M108,5.1a5.45,5.45,0,0,0-2.2.5,4.81,4.81,0,0,0-1.6,1.2h0V5.5h-2V19.2h2.1V10.5a3.47,3.47,0,0,1,1-2.5,3.46,3.46,0,0,1,2.6-.9c2.1,0,3.2,1.3,3.2,3.9v8.3h2.1v-9a4.68,4.68,0,0,0-1.4-3.7A5,5,0,0,0,108,5.1Z">
+                  </path>
+                  <path
+                    d="M118.5,2.1h-2V5.5h-2V7.4h1.9v7.9a4,4,0,0,0,.9,3,3.43,3.43,0,0,0,2.8,1h1.1v-2h-1c-.7,0-1.1-.1-1.4-.5a2.49,2.49,0,0,1-.3-1.7V7.3h3.4V5.4h-3.4Z">
+                  </path>
+                  <rect x="124.2" y="0.3" width="2.4" height="2.4"></rect>
+                  <rect x="124.4" y="5.5" width="2.1" height="13.7"></rect>
+                  <path
+                    d="M138.6,6.2A6.36,6.36,0,0,0,134.8,5a4.91,4.91,0,0,0-3.5,1.1A4.82,4.82,0,0,0,129.6,9l1.9.5a3.09,3.09,0,0,1,3.3-2.7,3.7,3.7,0,0,1,2.1.6,1.68,1.68,0,0,1,.7,1.5,1.85,1.85,0,0,1-.2.7,1,1,0,0,1-.4.5,3.55,3.55,0,0,1-.9.4c-.4.1-.7.2-1,.3a7.83,7.83,0,0,1-1.4.3,8.68,8.68,0,0,0-3.6,1.6,3.86,3.86,0,0,0-1.1,2.7,3.63,3.63,0,0,0,1.2,2.8,5.23,5.23,0,0,0,3.5,1.1,6.26,6.26,0,0,0,2.7-.6,3.74,3.74,0,0,0,1.5-1.3h0V19h1.9V10A4.4,4.4,0,0,0,138.6,6.2Zm-.8,8.6a2.46,2.46,0,0,1-1,2,4.28,4.28,0,0,1-2.9.8q-2.7,0-2.7-2.1a2,2,0,0,1,.6-1.5,6.59,6.59,0,0,1,2.4-1.1c2.1-.6,3.3-1.1,3.6-1.6h0Z">
+                  </path>
+                  <rect x="142.5" y="0.2" width="2.1" height="18.9"></rect>
+                </g>
+              </svg>
+            </a>
+            <div class="innerWrapperExpanded" style="display: flex;">
+              <div class="products">
+                <div class="productItem menuItem phoneNavItem hoverItem" style="opacity: 1;">
+                  <div class="text">Products</div>
+                  <div class="subMenu">
+                    <a class="subMenuItemText" href="https://www.essential.com/phone"
+                      style="opacity: 0; transform: translate3d(0px, 0px, 0px);">Phone</a>
+                    <a class="subMenuItemText" href="https://www.essential.com/audio"
+                      style="opacity: 0; transform: translate3d(0px, 0px, 0px);">Audio Adapter HD</a>
+                  </div>
+                </div>
+
+                <div class="productItemSpacer"></div>
+
+                <div class="productItem menuItem homeNavItem hoverItem" style="opacity: 1;">
+                  <div class="text">Community</div>
+                  <div class="subMenu">
+                    <a class="subMenuItemText" href="https://www.essential.com/blog"
+                      style="opacity: 0; transform: translate3d(0px, 0px, 0px);">Blog</a>
+                    <a class="subMenuItemText" href="https://support.essential.com/"
+                      style="opacity: 0; transform: translate3d(0px, 0px, 0px);">Support</a>
+                    <a class="subMenuItemText" href="https://www.essential.com/developer/overview"
+                      style="opacity: 0; transform: translate3d(0px, 0px, 0px);">Developer</a>
+                  </div>
+                </div>
+
+                <div class="productItemSpacer"></div>
+
+                <div class="productItem menuItem accessoriesNavItem hoverItem" style="opacity: 1;">
+                  <div class="text">About</div>
+                  <div class="subMenu">
+                    <p class="subMenuItemText" data-path="/about" data-slug="about"
+                      style="opacity: 0; transform: translate3d(0px, 0px, 0px);">Introduction</p>
+                    <p class="subMenuItemText" data-path="/about" data-slug="team"
+                      style="opacity: 0; transform: translate3d(0px, 0px, 0px);">Team</p>
+                    <p class="subMenuItemText" data-path="/about" data-slug="join-us"
+                      style="opacity: 0; transform: translate3d(0px, 0px, 0px);">Join us</p>
+                    <p class="subMenuItemText" data-path="/about" data-slug="contact-us"
+                      style="opacity: 0; transform: translate3d(0px, 0px, 0px);">Contact us</p>
+                    <p class="subMenuItemText" data-path="/about" data-slug="press-kit"
+                      style="opacity: 0; transform: translate3d(0px, 0px, 0px);">Press kit</p>
+                  </div>
+                </div>
+              </div>
+              <div class="navigation" style="opacity: 1">
+                <div class="left-side-menu">
+
+                </div>
+                <div class="right-side-menu">
+                  <div class="menuItem languageSelector hoverItem">
+
+                    <div class="activeSelector">
+                      <p>
+                        English
+                      </p>
+                    </div>
+                    <ul class="subMenu">
+                      <li class="subMenuItem subMenuItemText" data-prefix="fr"
+                        style="opacity: 0; transform: translate3d(0px, 0px, 0px);">
+                        <a href="https://www.essential.com/fr" class="subMenuItemText languagePicker">Français</a>
+                      </li>
+                      <li class="subMenuItem subMenuItemText" data-prefix="cn"
+                        style="opacity: 0; transform: translate3d(0px, 0px, 0px);">
+                        <a href="https://www.essential.com/cn" class="subMenuItemText languagePicker">中文（简体）</a>
+                      </li>
+                      <li class="subMenuItem subMenuItemText" data-prefix="tw"
+                        style="opacity: 0; transform: translate3d(0px, 0px, 0px);">
+                        <a href="https://www.essential.com/tw" class="subMenuItemText languagePicker">中文（繁體）</a>
+                      </li>
+                      <li class="subMenuItem subMenuItemText" data-prefix="de"
+                        style="opacity: 0; transform: translate3d(0px, 0px, 0px);">
+                        <a href="https://www.essential.com/de" class="subMenuItemText languagePicker">Deutsch</a>
+                      </li>
+                      <li class="subMenuItem subMenuItemText" data-prefix="jp"
+                        style="opacity: 0; transform: translate3d(0px, 0px, 0px);">
+                        <a href="https://www.essential.com/jp" class="subMenuItemText languagePicker">日本語</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="https://shop.essential.com/" class="shopIconLink shopNavItem">
+                    Shop
+                  </a>
+                </div>
+                <div class="MainMenuMobile">
+                  <div class="menuMobileBurger">
+                    <div class="menuMobileBurgerBar"></div>
+                    <div class="menuMobileBurgerBar"></div>
+                    <div class="menuMobileBurgerBar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="innerWrapperCollapsed" style="display: none;">
+              <ul class="aboutCollapsed">
+                <div class="activeItemWrapper">
+                  <p class="activeItem"></p>
+                  <div class="arrowWrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.36 9.9">
+                      <title>icon_arrowhead_right</title>
+                      <polygon points="4.95 3.54 1.41 0 0 1.41 3.54 4.95 0 8.48 1.41 9.9 4.95 6.36 6.36 4.95 4.95 3.54"
+                        fill="#999"></polygon>
+                    </svg>
+                  </div>
+                </div>
+                <div class="items">
+                  <li class="subMenuItemText" data-path="/about" data-slug="about">Introduction</li>
+                  <li class="subMenuItemText" data-path="/about" data-slug="team">Team</li>
+                  <li class="subMenuItemText" data-path="/about" data-slug="join-us">Join us</li>
+                  <li class="subMenuItemText" data-path="/about" data-slug="contact-us">Contact us</li>
+                  <li class="subMenuItemText" data-path="/about" data-slug="press-kit">Press kit</li>
+                </div>
+              </ul>
+            </div>
+            <a href="https://shop.essential.com/" class="shopIconLink shopIconLinkInner shopNavItem">
+              Shop
+            </a>
+          </div>
+          <div class="MainMenuMobile">
+            <div class="menuMobileItems">
+              <div class="menuWrapper">
+                <ul class="menuMobileNavigation">
+                  <li class="mobileNavItem mobileNavItem--title"
+                    style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);">Products</li>
+                  <li class="mobileNavItem mobileNavItem--subItem"
+                    style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);"><a
+                      href="https://www.essential.com/phone">Phone</a></li>
+                  <li class="mobileNavItem mobileNavItem--subItem"
+                    style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);"><a
+                      href="https://www.essential.com/audio">Audio Adapter HD</a></li>
+                  <li class="mobileNavItem mobileNavItem--title"
+                    style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);">Community</li>
+                  <li class="mobileNavItem mobileNavItem--subItem"
+                    style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);"><a
+                      href="https://www.essential.com/blog">Blog</a></li>
+                  <li class="mobileNavItem mobileNavItem--subItem"
+                    style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);"><a
+                      href="https://support.essential.com/">Support</a></li>
+                  <li class="mobileNavItem mobileNavItem--subItem"
+                    style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);"><a
+                      href="https://www.essential.com/developer/overview">Developer</a></li>
+                  <li class="mobileNavItem" style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);"><a
+                      href="https://www.essential.com/about">About</a></li>
+                  <li class="mobileshopNavItem" style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);"><a
+                      href="https://shop.essential.com/" class="shopNavItem">Shop</a></li>
+                  <li class="mobilesupportNavItem" style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);"><a
+                      href="https://support.essential.com/" class="supportNavItem" target="_blank">Support</a></li>
+                  <li class="languageSelector" style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);">
+
+                    <div class="activeSelector">
+                      <p>
+                        English
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.36 9.9">
+                          <title>icon_arrowhead_right</title>
+                          <polygon
+                            points="4.95 3.54 1.41 0 0 1.41 3.54 4.95 0 8.48 1.41 9.9 4.95 6.36 6.36 4.95 4.95 3.54"
+                            fill="#999"></polygon>
+                        </svg>
+                      </p>
+                    </div>
+
+                    <ul class="subMenu">
+                      <li class="subMenuItem subMenuItemText" data-prefix="fr"
+                        style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);">
+                        <a href="https://www.essential.com/fr" class="subMenuItemText languagePicker">Français</a>
+                      </li>
+                      <li class="subMenuItem subMenuItemText" data-prefix="cn"
+                        style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);">
+                        <a href="https://www.essential.com/cn" class="subMenuItemText languagePicker">中文（简体）</a>
+                      </li>
+                      <li class="subMenuItem subMenuItemText" data-prefix="tw"
+                        style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);">
+                        <a href="https://www.essential.com/tw" class="subMenuItemText languagePicker">中文（繁體）</a>
+                      </li>
+                      <li class="subMenuItem subMenuItemText" data-prefix="de"
+                        style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);">
+                        <a href="https://www.essential.com/de" class="subMenuItemText languagePicker">Deutsch</a>
+                      </li>
+                      <li class="subMenuItem subMenuItemText" data-prefix="jp"
+                        style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -20);">
+                        <a href="https://www.essential.com/jp" class="subMenuItemText languagePicker">日本語</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+
+      <div id="supportLayer" style="pointer-events: all; cursor: pointer;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+          <title>Asset 97</title>
+          <g>
+            <circle cx="20" cy="20" r="19.5" fill="none" stroke="#999" stroke-miterlimit="10"></circle>
+            <path d="M22.5,16.42v-.91a3,3,0,0,0-3-3h-11a3,3,0,0,0-3,3v5a3,3,0,0,0,3,3h.74l-.75,3,4.5-3h3.67" fill="none"
+              stroke="#999" stroke-miterlimit="10"></path>
+            <path
+              d="M19.51,16.5h11a3,3,0,0,1,3,3v5a3,3,0,0,1-3,3h-.74l.75,3-4.5-3H19.51a3,3,0,0,1-3-3v-5A3,3,0,0,1,19.51,16.5Z"
+              fill="none" stroke="#999" stroke-miterlimit="10"></path>
+            <g>
+              <circle cx="21" cy="22" r="0.5" fill="none" stroke="#999" stroke-miterlimit="10"></circle>
+              <circle cx="25" cy="22" r="0.5" fill="none" stroke="#999" stroke-miterlimit="10"></circle>
+              <circle cx="29" cy="22" r="0.5" fill="none" stroke="#999" stroke-miterlimit="10"></circle>
+            </g>
+          </g>
+        </svg>
+
+        <svg class="spinner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38">
+          <path
+            d="M18.5 0v7M13.6.78l1.81 6.76M9.07 2.8l3.5 6.06M5.21 5.92l4.95 4.95M2.3 9.93l6.06 3.5M.52 14.57l6.76 1.81M0 19.5h7M.78 24.4l6.76-1.81M2.8 28.93l6.06-3.5m-2.94 7.36l4.95-4.95m-.94 7.86l3.5-6.06m1.14 7.84l1.81-6.76M19.5 38v-7m4.9 6.22l-1.81-6.76m6.34 4.74l-3.5-6.06m7.36 2.94l-4.95-4.95m7.86.94l-6.06-3.5m7.84-1.14l-6.76-1.81M38 18.5h-7m6.22-4.9l-6.76 1.81m4.74-6.34l-6.06 3.5m2.94-7.36l-4.95 4.95m.94-7.86l-3.5 6.06M23.43.52l-1.81 6.76">
+          </path>
+        </svg>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <script>
+    $('#fullpage').fullpage({
+      sectionsColor: ['#F4F4F6', '#4A4A4A', '#D8D8D8', '#4A4A4A', '#FFF'],
+      sectionSelector: '.vertical-scrolling',
+      navigation: true,
+      slidesNavigation: true,
+      controlArrows: false,
+      anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection'],
+      menu: '#menu',
+    });
+  </script>
+
+  <div id="mc_locale">en</div>
+
+  <script src="https://www.essential.com/js/lib/com/bugsnag/bugsnag-2.min.js"
+    data-apikey="1f5bebc6895a4358198c897c20b1caec"></script>
+  <script src="https://www.essential.com/release/js/combined-57fa60250c.js"></script>
+
+  <script>
+    var $buoop = { vs: { i: 10, f: -4, o: -4, s: 9.9, c: -4 }, api: 4 };
+
+    function $buo_f() {
+      var e = document.createElement("script");
+      e.src = "https://www.essential.com/js/lib/com/browserupdate/browser_update.min.js";
+      document.body.appendChild(e);
+    };
+    try {
+      document.addEventListener("DOMContentLoaded", $buo_f, false)
+    }
+    catch (e) {
+      window.attachEvent("onload", $buo_f)
+    }
+  </script>
+  <script src="https://www.essential.com/js/lib/com/browserupdate/browser_update.min.js"></script>
+
+  <iframe src="https://maker.me/embeds/enhance/8361/perms_shell?url=d3d3LmVzc2VudGlhbC5jb20="
+    style="height: 0px; width: 0px; opacity: 0; visibility: hidden; display: none;"></iframe>
+
+</body>
+
+</html>
