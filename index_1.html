@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>웹퍼블리셔 장세종 포트폴리오</title>
+</head>
+
+<link href="https://github.com/gshn/fonts/blob/master/NotoSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/SpoqaHanSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumBarunGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumSquare/fonts.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    @import "@material/fab/mdc-fab";
+
+    * {
+        list-style: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    body {
+        padding: 3.75%;
+        background-color: #f0f0f0;
+        margin-bottom: 72px;
+    }
+
+    progress {
+        appearance: none;
+        display: block;
+        width: 100%;
+        height: 6px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    progress-value,
+    progress::-webkit-progress-bar,
+    progress::-webkit-progress-value,
+    progress::-moz-progress-bar {
+        background-color: white;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-auto-rows: 1fr;
+        grid-gap: 20px;
+        align-items: stretch;
+    }
+
+    .grid::before {
+        content: '';
+        width: 0;
+        padding-bottom: 100%;
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+    }
+
+    .grid>*:first-child {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+    }
+
+    .grid>a {
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.20);
+        padding: 10px;
+    }
+
+    .part_button_A,
+    .part_button_B {
+        width: 160px;
+        height: 40px;
+        border-radius: 40px;
+        background-color: #5460c0;
+        border: none;
+        color: white;
+        padding: 10px 16px;
+        font-size: 20px;
+        line-height: 40px;
+        box-shadow: 0 3.75px 5px 0 rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+    }
+
+    .part_button_1 {
+        width: 100%;
+        height: 48px;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.25);
+        border: none;
+        border-radius: 24px;
+        padding: 12px 20px;
+        margin: 8px 0px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .part_button_1:hover {
+        background-color: white;
+        color: rgba(0, 0, 0, 0.75);
+    }
+
+    .profile_full {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .profile_full .overlay_toggle {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 3;
+        cursor: pointer;
+        width: 192px;
+        height: 40px;
+        opacity: 0;
+    }
+
+    .profile_full .profile_contents {
+        visibility: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-top: 80px;
+    }
+
+    .profile_full .overlay_toggle:checked~.profile_contents {
+        visibility: visible;
+    }
+
+    .profile_full .overlay_toggle:checked~.profile_contents>div {
+        transform: scale(1);
+    }
+
+    .profile_full .overlay_toggle:checked~.profile_contents>div>div {
+        opacity: 1;
+    }
+
+    .profile_full .part_button_B {
+        display: none;
+    }
+
+    .profile_full .overlay_toggle:checked~.part_button_A {
+        display: none;
+    }
+
+    .profile_full .overlay_toggle:checked~.part_button_B {
+        display: block;
+    }
+
+    .profile_contents .part_cont_A,
+    .profile_contents .part_cont_B {
+        width: 360px;
+        display: inline-block;
+        margin: 40px;
+    }
+
+    .profile_contents .part_cont_A>progress {
+        width: 95%;
+        height: 4px;
+        border: none;
+        background-color: white;
+    }
+</style>
+
+<body>
+
+    <div id="grid" class="grid">
+        <a href="index_1.html"
+            style="color: White; text-shadow: 0px 0px 10px black; background-image: url('resources/M001.jpg'); background-size: 100% 100%;">
+            <article style="line-height: 2em">
+                <span>포트폴리오 / 프로필 소개 (1차)</span><br>
+                <i class="material-icons">devices</i>
+            </article>
+        </a>
+        <a href="index_2.html"
+            style="color: White; text-shadow: 0px 0px 10px black; background-image: url('resources/M004.jpg'); background-size: 100% 100%;">
+            <article style="line-height: 2em">
+                <span>포트폴리오 / 프로필 소개 (2차)</span><br>
+                <i class="material-icons">devices</i>
+            </article>
+        </a>
+        <a href="index_3.html"
+            style="color: White; text-shadow: 0px 0px 10px black; background-image: url('#.jpg'); background-size: 100% 100%;">
+            <article style="line-height: 2em">
+                <span>포트폴리오 / 프로필 소개 (3차)</span><br>
+                <i class="material-icons">devices</i>
+            </article>
+        </a>
+        <a href="portfolio1A/index.html" target="_blank"
+            style="color: White; text-shadow: 0px 0px 10px black; background-image: url('resources/M002.jpg'); background-size: 100% 100%;">
+            <article style="line-height: 2em">
+                <span>한화 꿈에그린·포레나 리뉴얼 (1차)</span><br>
+                <i class="material-icons">desktop_windows</i>
+            </article>
+        </a>
+        <a href="portfolio1B/index.html" target="_blank"
+            style="color: White; text-shadow: 0px 0px 10px black; background-image: url('resources/M003.jpg'); background-size: 100% 100%;">
+            <article style="line-height: 2em">
+                <span>한화 꿈에그린·포레나 리뉴얼 (1차)</span><br>
+                <i class="material-icons">phone_android</i>
+            </article>
+        </a>
+        <a href="portfolio3/index.html" target="_blank"
+            style="color: White; text-shadow: 0px 0px 10px black; background-image: url('resources/M005.jpg'); background-size: 100% 100%;">
+            <article style="line-height: 2em">
+                <span>
+                    ASUS ZenUI - 소개 페이지<br>
+                    (가로 슬라이드)
+                </span><br>
+                <i class="material-icons">devices</i>
+            </article>
+        </a>
+        <a href="portfolio4/index.html" target="_blank"
+            style="color: White; text-shadow: 0px 0px 10px black; background-image: url('resources/M006.jpg'); background-size: 100% 100%;">
+            <article style="line-height: 2em">
+                <span>
+                    Essential Phone - 메인 페이지<br>
+                    (세로 슬라이드)
+                </span><br>
+                <i class="material-icons">devices</i>
+            </article>
+        </a>
+    </div>
+
+    <div class="profile_full">
+        <input type="checkbox" class="overlay_toggle">
+
+        <div id="part_button_A" class="part_button_A">
+            <i class="mdc-fab_icon material-icons" style="float: left; line-height: 48px;">person</i>
+            <span style="float: right">프로필</span>
+        </div>
+
+        <div id="part_button_B" class="part_button_B" style="z-index: 2">
+            <i class="mdc-fab_icon material-icons" style="float: left; line-height: 48px;">view_module</i>
+            <span style="float: right">포트폴리오</span>
+        </div>
+
+        <div class="profile_contents">
+            <div>
+                <div id="part_cont_A" class="part_cont_A">
+                    <div>
+                        <span style="float: left">HTML5</span>
+                        <span style="float: right">60%</span>
+                        <br>
+                        <progress max="100" value="60"></progress>
+                        <span>웹 접근성 준수, 반응형·적응형 웹 제작</span>
+                    </div>
+                    <br>
+                    <div>
+                        <span style="float: left">CSS</span>
+                        <span style="float: right">60%</span>
+                        <br>
+                        <progress max="100" value="60"></progress>
+                        <span>웹 표준 마크업</span>
+                    </div>
+                    <br>
+                    <div>
+                        <span style="float: left">JavaScript & jQuery</span>
+                        <span style="float: right">50%</span>
+                        <br>
+                        <progress max="100" value="50"></progress>
+                        <span>jQuery 플러그인 활용</span>
+                    </div>
+                    <br>
+                    <div>
+                        <span style="float: left">Photoshop</span>
+                        <span style="float: right">67.5%</span>
+                        <br>
+                        <progress max="100" value="67.5"></progress>
+                        <span>GTQ 2급 자격증 보유</span>
+                    </div>
+                    <br>
+                    <div>
+                        <span style="float: left">illustrator</span>
+                        <span style="float: right">75%</span>
+                        <br>
+                        <progress max="100" value="75"></progress>
+                        <span></span>
+                    </div>
+                </div>
+                <div id="part_cont_B" class="part_cont_B">
+                    <p style="font-size: 32px">
+                        장세종
+                    </p><br>
+
+                    <p style="font-size: 20px">
+                        <i class="mdc-fab_icon material-icons">cake</i>
+                        1993. 10. 03
+                    </p>
+                    <p style="font-size: 20px">
+                        <i class="mdc-fab_icon material-icons">room</i>
+                        부산광역시 북구 금곡동
+                    </p>
+
+                    <a href="tel:010-4003-9971">
+                        <button class="part_button_1">
+                            <i class="mdc-fab_icon material-icons" style="float: left">call</i>
+                            <span style="float: right">010-4003-9971</span>
+                        </button>
+                    </a>
+                    <br>
+
+                    <a href="mailto:jangsejong10.3@gmail.com">
+                        <button class="part_button_1">
+                            <i class="mdc-fab_icon material-icons" style="float: left">email</i>
+                            <span style="float: right">jangsejong10.3@gmail.com</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
