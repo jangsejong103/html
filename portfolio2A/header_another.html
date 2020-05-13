@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<link href="https://github.com/gshn/fonts/blob/master/NotoSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/SpoqaHanSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumBarunGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumSquare/fonts.css" rel="stylesheet">
+
+<style>
+    * {
+        text-align: center;
+        text-decoration: none;
+        list-style: none;
+        background-color: #ddd;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    h3 {
+        background-color: transparent;
+    }
+
+    p {
+        background-color: transparent;
+    }
+
+    .backimage {
+        width: 100%;
+        height: 360px;
+    }
+
+    .logo {
+        background-color: rgba(255, 255, 255, 0.25);
+        position: relative;
+        display: inline-block;
+        width: 240px;
+        height: 60px;
+        top: -340px;
+    }
+
+    nav {
+        width: 100%;
+        height: 60px;
+    }
+
+    nav li {
+        display: inline-block;
+        padding: 10px;
+        margin: 10px;
+        background-color: transparent;
+    }
+
+    .menu_A {
+        background-color: rgba(255, 255, 255, 0.25);
+        position: absolute;
+        top: 180px;
+    }
+
+    .menu_B {
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        top: 240px;
+    }
+
+    .menu_C {
+        background-color: rgba(255, 255, 255, 0.75);
+        position: absolute;
+        top: 300px;
+    }
+
+    .menu_sub {
+        display: none;
+    }
+
+    .menus li:hover {
+        border-bottom: 4px solid cornflowerblue;
+    }
+</style>
+
+<script language="JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script language="JavaScript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script>
+
+    var zoomx = 100;
+    $(document).ready(function () {
+        $(".downer_category").hover(
+            function () {
+                $(".downer_list").stop().slideDown(0);
+            },
+            function () {
+                $(".downer_list").stop().slideUp(0);
+            }
+        );
+
+        $(".downer_list").hover(
+            function () {
+                $(".downer_list").stop().slideDown(0);
+            },
+            function () {
+                $(".downer_list").stop().slideUp(0);
+            }
+        );
+
+        $(".tabBtn").hover(
+            function () {
+                $(this).children(".icon_normal").css("display", "none");
+                $(this).children(".icon_over").css("display", "block");
+            },
+            function () {
+                $(this).children(".icon_over").css("display", "none");
+                $(this).children(".basic").css("display", "block");
+            }
+        );
+
+        $(".tabBtn").click(
+            function () {
+                $("." + $(this).attr("tarx")).children(".icon_normal").addClass("basic");
+                $("." + $(this).attr("tarx")).children(".icon_over").removeClass("basic");
+                $(this).children(".icon_over").addClass("basic");
+                $(this).children(".icon_normal").removeClass("basic");
+
+                $("." + $(this).attr("tarx")).children(".icon_over").css("display", "none");
+                $("." + $(this).attr("tarx")).children(".icon_normal").css("display", "none");
+                $("." + $(this).attr("tarx")).children(".basic").css("display", "block");
+
+
+                $("." + $(this).attr("tarc")).css("display", "none");
+                $("#" + $(this).attr("tar")).css("display", "block");
+
+                $("#" + $(this).attr("tarmc")).attr("href", $(this).attr("tarm"));
+            }
+        );
+    });
+    function body_zoomin() {
+        zoomx = zoomx + 10;
+        $("body").css("zoom", zoomx + "%");
+    }
+    function body_zoomout() {
+        zoomx = zoomx - 10;
+        $("body").css("zoom", zoomx + "%");
+    }
+    function body_zoomdef() {
+        zoomx = 100;
+        $("body").css("zoom", zoomx + "%");
+    }
+    function newWin(url, w, h) {
+        window.open
+            (url, 'new_win', 'width=' + w + ',height=' + h + ',toolbars=no,menubars=no,scrollbars=auto');
+    }
+</script>
+
+<body>
+
+    <div>
+        <div class="backimage">
+
+        </div>
+
+        <div class="logo">
+
+        </div>
+
+
+        <div class="menu_class_div">
+            <header class="menu_class_header">
+                <div class="menu_part_1">
+                    <ul>
+                        <a href="#">
+                            <li>즐겨찾기등록</li>
+                        </a>
+                        <a href="#">
+                            <li>로그인</li>
+                        </a>
+                        <a href="#">
+                            <li>ID/PW찾기</li>
+                        </a>
+                        <a href="#">
+                            <li>회원가입</li>
+                        </a>
+                        <a href="#">
+                            <li>설문조사</li>
+                        </a>
+                        <a href="#">
+                            <li>NCS 평가</li>
+                        </a>
+                        <a href="#">
+                            <li>사이트맵</li>
+                        </a>
+                        <a href="#">
+                            <li>ADMIN</li>
+                        </a>
+                    </ul>
+                </div>
+
+                <div class="menu_part_2">
+                    <ul>
+                        <a href="#">
+                            <li>효성소개</li>
+                        </a>
+                        <a href="#">
+                            <li>과정안내</li>
+                        </a>
+                        <a href="#">
+                            <li>교육신청</li>
+                        </a>
+                        <a href="#">
+                            <li>무료교육안내</li>
+                        </a>
+                        <a href="#">
+                            <li>취업정보</li>
+                        </a>
+                        <a href="#">
+                            <li>커뮤니티</li>
+                        </a>
+                    </ul>
+                </div>
+
+                <div class="menu_part_3">
+                    <ul style="display: none;">
+                        <li>
+                            <ul>
+                                <a href="#">
+                                    <li>인사말</li>
+                                </a>
+                                <a href="#">
+                                    <li>연혁</li>
+                                </a>
+                                <a href="#">
+                                    <li>본교특징</li>
+                                </a>
+                                <a href="#">
+                                    <li>조직도</li>
+                                </a>
+                                <a href="#">
+                                    <li>비젼</li>
+                                </a>
+                                <a href="#">
+                                    <li>시설안내</li>
+                                </a>
+                                <a href="#">
+                                    <li>오시는 길</li>
+                                </a>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <a href="#">
+                                    <li>현재 모집중인 과정</li>
+                                </a>
+                                <a href="#">
+                                    <li>진행중인 과정</li>
+                                </a>
+                                <a href="#">
+                                    <li>연간 모집 과정</li>
+                                </a>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <a href="#">
+                                    <li>온라인 접수</li>
+                                </a>
+                                <a href="#">
+                                    <li>입학상담</li>
+                                </a>
+                                <a href="#">
+                                    <li>자주하는 질문</li>
+                                </a>
+                                <a href="#">
+                                    <li>접수진행 / 합격확인</li>
+                                </a>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <a href="#">
+                                    <li>국가기간 전략직종</li>
+                                </a>
+                                <a href="#">
+                                    <li>내일배움카드</li>
+                                </a>
+                                <a href="#">
+                                    <li>부산시 맞춤훈련</li>
+                                </a>
+                                <a href="#">
+                                    <li>재직자 훈련</li>
+                                </a>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <a href="#">
+                                    <li>기업체 구인</li>
+                                </a>
+                                <a href="#">
+                                    <li>인재정보</li>
+                                </a>
+                                <a href="#">
+                                    <li>취업 자료실</li>
+                                </a>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <a href="#">
+                                    <li>공지사항</li>
+                                </a>
+                                <a href="#">
+                                    <li>갤러리</li>
+                                </a>
+                                <a href="#">
+                                    <li>수강 후기</li>
+                                </a>
+                                <a href="#">
+                                    <li>서식 다운로드</li>
+                                </a>
+                                <a href="#">
+                                    <li>자유게시판</li>
+                                </a>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p class="menu_part_3_void"
+                        style="display: inline-block; padding: 10px; margin: 10px; background-color: transparent;">
+                        고용노동부 평가 전국 우수 교육훈련기관
+                    </p>
+                </div>
+            </header>
+        </div>
+
+
+        <div class="menu_gather" id="menu_gather">
+            <div class="nav_A2" id="nav_A2">
+                <label for="toggle_A" onclick>&equiv;</label>
+                <input type="checkbox" id="toggle_A">
+            </div>
+
+            <ul class="nav_A1" id="nav_A1">
+                <li><a href="#">즐겨찾기등록</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">ID/PW 찾기</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">설문조사</a></li>
+                <li><a href="#">NCS 평가</a></li>
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">ADMIN</a></li>
+            </ul>
+
+            <div class="nav_B2" id="nav_B2">
+                <label for="toggle_B" onclick>&equiv;</label>
+                <input type="checkbox" id="toggle_B">
+            </div>
+
+            <ul class="nav_B1" id="nav_B1">
+                <li>
+                    <a href="#">효성소개</a>
+                    <ul class="menu_sub">
+                        <li><a href="#"></a>인사말</li>
+                        <li><a href="#"></a>연혁</li>
+                        <li><a href="#"></a>본교특징</li>
+                        <li><a href="#"></a>조직도</li>
+                        <li><a href="#"></a>비젼</li>
+                        <li><a href="#"></a>시설안내</li>
+                        <li><a href="#"></a>오시는 길</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">과정안내</a>
+                    <ul class="menu_sub">
+                        <li><a href="#"></a>현재 모집중인 과정</li>
+                        <li><a href="#"></a>진행중인 과정</li>
+                        <li><a href="#"></a>연간 모집 과정</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">교육신청</a>
+                    <ul class="menu_sub">
+                        <li><a href="#"></a>온라인 접수</li>
+                        <li><a href="#"></a>입학상담</li>
+                        <li><a href="#"></a>자주하는 질문</li>
+                        <li><a href="#"></a>접수진행 / 합격확인</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">무료교육안내</a>
+                    <ul class="menu_sub">
+                        <li><a href="#"></a>국가기간 전략직종</li>
+                        <li><a href="#"></a>내일배움카드</li>
+                        <li><a href="#"></a>부산시 맞춤훈련</li>
+                        <li><a href="#"></a>재직자 훈련</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">취업정보</a>
+                    <ul class="menu_sub">
+                        <li><a href="#"></a>기업체 구인</li>
+                        <li><a href="#"></a>인재정보</li>
+                        <li><a href="#"></a>취업자료실</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">커뮤니티</a>
+                    <ul class="menu_sub">
+                        <li><a href="#"></a>공지사항</li>
+                        <li><a href="#"></a>갤러리</li>
+                        <li><a href="#"></a>수강 후기</li>
+                        <li><a href="#"></a>서식 다운로드</li>
+                        <li><a href="#"></a>자유게시판</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav_C1" id="nav_C1">
+                <p class="void_title"
+                    style="display: inline-block; padding: 10px; margin: 10px; background-color: transparent;">
+                    고용노동부 평가 전국 우수 교육훈련기관
+                </p>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
