@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.875">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>꿈에그린 :: 수지 동천</title>
+</head>
+<link href="https://github.com/gshn/fonts/blob/master/NotoSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/SpoqaHanSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumBarunGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumSquare/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<style>
+    * {
+        text-align: center;
+        text-decoration: none;
+        list-style: none;
+        background-color: white;
+        margin: 0 auto;
+        padding: 0;
+        vertical-align: middle;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    a,
+    b,
+    p,
+    i,
+    br,
+    ul,
+    li,
+    font,
+    h1,
+    h4,
+    h5,
+    div {
+        background: transparent;
+    }
+
+    #action {
+        position: fixed;
+        width: 100%;
+        height: 100px;
+        top: 0;
+        background: linear-gradient(to bottom, rgb(200, 200, 200), rgba(200, 200, 200, 0));
+        z-index: 12;
+    }
+
+    #action .call_to i {
+        position: absolute;
+        top: 10%;
+        left: 2.5%;
+        font-size: 30px;
+        padding: 8px;
+        color: #007EBE;
+        cursor: pointer;
+    }
+
+    #action #menu_on {
+        position: absolute;
+        top: 7.5%;
+        right: 3.75%;
+        font-size: 36px;
+        padding: 8px;
+        color: #007EBE;
+        cursor: pointer;
+    }
+
+    #action #menu_off {
+        position: absolute;
+        top: 5%;
+        right: 3.75%;
+        font-size: 40px;
+        padding: 8px;
+        color: #007EBE;
+        cursor: pointer;
+    }
+
+    .brand_logo {
+        background-color: transparent;
+        padding: 16px;
+    }
+
+    .menu_part {
+        position: fixed;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.875);
+        padding-top: 100px;
+        display: none;
+        z-index: 10;
+    }
+
+    .menu_part .menu_upper {
+        width: 92.5%;
+        height: 60px;
+        background-color: transparent;
+        color: transparent;
+        font-size: 16px;
+        border-bottom: 1px solid #8A8D8F;
+    }
+
+    .menu_part .menu_upper input {
+        width: 37.5%;
+        height: 56px;
+        float: left;
+        font-size: 16px;
+        color: #8A8D8F;
+        background-color: transparent;
+        border-bottom: 4px solid #8A8D8F;
+    }
+
+    .menu_part .menu_upper ul {
+        float: right;
+        background-color: transparent;
+    }
+
+    .menu_part .menu_upper ul li {
+        width: 80px;
+        height: 40px;
+        padding: 10px;
+        line-height: 40px;
+        float: left;
+        background-color: transparent;
+    }
+
+    .menu_part .menu_upper a {
+        color: black;
+    }
+
+    .menu_part .menu_0 {
+        padding: 0 25px 25px;
+    }
+
+    .menu_part .menu_0>li {
+        padding-bottom: 5px;
+        border-bottom: 1px solid #8A8D8F;
+    }
+
+    .menu_part .menu_0>li:last-child {
+        border-bottom: 0;
+    }
+
+    .menu_part .menu_0 li .menu_2 {
+        display: block;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #007EBE;
+    }
+
+    .menu_part .menu_0 li ul {
+        overflow: hidden;
+    }
+
+    .menu_part .menu_0 li ul li {
+        float: left;
+        width: 50%;
+        padding-bottom: 20px;
+    }
+
+    .menu_part .menu_0 li ul li a {
+        font-weight: 300;
+        color: #5C5C5C;
+    }
+
+    input {
+        border: none;
+    }
+
+    .subs {
+        width: 100%;
+        height: 200px;
+        padding-top: 80px;
+        overflow: hidden;
+        display: table;
+        background-color: black;
+        background-image: url(../resources/Motif_0-2.jpg);
+        background-repeat: repeat;
+        position: relative;
+    }
+
+    .subs p {
+        display: table-cell;
+        color: white;
+        font-size: 16px;
+        font-family: 'NanumSquare', sans-serif;
+    }
+
+    .subs b {
+        font-size: 32px;
+        font-family: 'NanumSquare', sans-serif;
+    }
+
+    .content {
+        width: 90%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    footer {
+        width: 95%;
+        height: 360px;
+        border-top: 1px solid #5C5C5C;
+    }
+
+    footer img {
+        margin: 16px;
+    }
+
+    footer p {
+        display: inline-block;
+        line-height: 1.5em;
+    }
+
+    footer ul {
+        margin: 10px;
+    }
+
+    footer li {
+        display: inline-block;
+        padding: 10px 20px;
+    }
+
+    footer a {
+        color: black;
+    }
+</style>
+
+<script language="JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script language="JavaScript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script>
+    var _vodId = 'MCxKCn5qx3M';
+    var menuOpen = false;
+    function toggleMenu() {
+        menuOpen = !menuOpen;
+        if (menuOpen) {
+            $('#menu_part').show();
+            $('#menu_on').hide();
+            $('#menu_off').show();
+        } else {
+            $('#menu_part').hide();
+            $('#menu_on').show();
+            $('#menu_off').hide();
+        }
+    }
+
+    function gotoSec(_no) {
+        $(window).scrollTo($('.section' + _no).offset().top - $('#action').height());
+        menuOpen = false;
+        $('#menu_part').show();
+        $('#menu_on').show();
+        $('#menu_off').hide();
+    }
+</script>
+
+<body>
+    <header>
+        <div id="action">
+            <a class="call_to" href="tel:1600-4900" target="_blank"><i class="material-icons">call</i></a>
+            <a href="index.html"><img src="../resources/Dreamin-green_Brand.png" alt="포레나" class="brand_logo"></a>
+            <a onclick="toggleMenu();" class="action_button">
+                <p id="menu_on">&equiv;</p>
+                <p id="menu_off" style="display: none;">&times;</p>
+            </a>
+        </div>
+
+        <div id="menu_part" class="menu_part">
+            <ul class="menu_0">
+                <li class="menu_1">
+                    <a href="overview.html" class="menu_2">사업</a>
+                    <ul>
+                        <li>
+                            <a href="overview.html">개요</a>
+                        </li>
+                        <li>
+                            <a href="environment.html">입지환경</a>
+                        </li>
+                        <li>
+                            <a href="brand.html">브랜드</a>
+                        </li>
+                        <li>
+                            <a href="premium.html">프리미엄</a>
+                        </li>
+                        <li>
+                            <a href="location.html">오시는 길</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu_1">
+                    <a href="sales_points.html" class="menu_2">분양</a>
+                    <ul>
+                        <li>
+                            <a href="sales_points.html">분양안내</a>
+                        </li>
+                        <li>
+                            <a href="../222.html">분양안내 요약</a>
+                        </li>
+                        <li>
+                            <a href="../222.html">관심고객 등록</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu_1">
+                    <a href="array.html" class="menu_2">상품</a>
+                    <ul>
+                        <li>
+                            <a href="array.html">동·호수 배치도</a>
+                        </li>
+                        <li>
+                            <a href="community.html">커뮤니티</a>
+                        </li>
+                        <li>
+                            <a href="system.html">특화 시스템</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu_1">
+                    <a href="housetype_apart.html" class="menu_2">세대</a>
+                    <ul>
+                        <li>
+                            <a href="housetype_apart.html">아파트</a>
+                        </li>
+                        <li>
+                            <a href="housetype_office.html">오피스텔</a>
+                        </li>
+                        <li>
+                            <a href="../222.html">e-모델하우스</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="subs">
+        <p>
+            <b>사업개요</b><br><br>
+            강남·판교를 뛰어넘을 프리미엄 동천시대, 수지 동천 꿈에그린
+        </p>
+    </div>
+
+    <div class="content">
+        <img src="../resources/dongcheon-overview_(Mobile).jpg" width="90%">
+    </div>
+    
+    <footer>
+        <img src="../resources/Hanhwa_ENC.png" width="200px">
+        <br>
+
+        <p>
+            대표전화 : 02.2055.6000 / 고객센터 080.729.2400<br>
+            서울시 영등포구 여의대로 24 전경련회관<br>
+            COPYRIGHT 2019. HANHWA ENGINEERING & CONSTRUCTION Corp.
+        </p>
+        <br><br>
+
+        <ul>
+            <li><a href="222.html">
+                    개인정보처리방침
+                </a></li>
+            <li><a href="222.html">
+                    이메일무단수집거부
+                </a></li>
+            <li><a href="222.html">
+                    회원약관
+                </a></li>
+            <li><a href="222.html">
+                    사이트맵
+                </a></li>
+        </ul>
+        <ul>
+            <li><a href="https://blog.naver.com/hanwha_enc" target="_blank">
+                    <img src="../resources/shortcut_naverblog.png" height="20px">
+                    네이버 블로그
+                </a></li>
+            <li><a href="https://m.post.naver.com/hanwha_enc" target="_blank">
+                    <img src="../resources/shortcut_naverpost.png" height="20px">
+                    네이버 포스트
+                </a></li>
+            <li><a href="https://www.youtube.com/channel/UCYjfgiex4aTgDgcn0zsU-MA" target="_blank">
+                    <img src="../resources/shortcut_youtube.png" height="20px">
+                    유튜브
+                </a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
