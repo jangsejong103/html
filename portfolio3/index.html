@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ZenUI | ASUS Global</title>
+
+
+  <style>
+    @import "@material/fab/mdc-fab";
+
+    /* Slider */
+    .slider {
+      display: none;
+      width: 100%;
+      position: absolute;
+    }
+
+    /* each slide background color */
+    .slide1 {
+      left: 0;
+    }
+
+    .slide2 {
+      left: 100%;
+      margin-top: -100px;
+      padding-bottom: 12.5%;
+      background: #f0f4f6;
+    }
+
+    .slide3 {
+      left: 200%;
+      margin-top: -60px;
+      padding-bottom: 10%;
+      background: #f0f4f6;
+    }
+
+    .slide4 {
+      left: 300%;
+      margin-top: -60px;
+      padding-bottom: 10%;
+      background: #f0f4f6;
+    }
+
+    .slide5 {
+      left: 400%;
+      margin-top: -60px;
+      padding-bottom: 10%;
+      background: #f0f4f6;
+    }
+
+    /* Next and previous button */
+    .control {
+      display: block;
+      position: fixed;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      z-index: 50;
+      transform: translateY(50%);
+    }
+
+    .control label {
+      z-index: 0;
+      display: none;
+      text-align: center;
+      line-height: 50px;
+      font-size: 50px;
+      color: #000;
+      cursor: pointer;
+      opacity: 0.25;
+    }
+
+    .control label:hover {
+      opacity: 0.5;
+    }
+
+    .next {
+      top: 50%;
+      right: 1%;
+      transform: translateY(50%);
+    }
+
+    .previous {
+      top: 50%;
+      left: 1%;
+      transform: translateY(50%);
+    }
+
+    /* Slider pagination */
+    .slider-pagination {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      left: 0;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .slider-pagination label {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.25);
+      margin: 0 2px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .slide-radio1,
+    .slide-radio2,
+    .slide-radio3,
+    .slide-radio4,
+    .slide-radio5 {
+      display: none;
+    }
+
+    /* Slider control active css */
+    .slide-radio1:checked~.next .numb2,
+    .slide-radio2:checked~.next .numb3,
+    .slide-radio3:checked~.next .numb4,
+    .slide-radio4:checked~.next .numb5,
+    .slide-radio2:checked~.previous .numb1,
+    .slide-radio3:checked~.previous .numb2,
+    .slide-radio4:checked~.previous .numb3,
+    .slide-radio5:checked~.previous .numb4 {
+      display: block;
+      z-index: 1
+    }
+
+    /* Slider pagination active css */
+    .slide-radio1:checked~.slider-pagination .page1,
+    .slide-radio2:checked~.slider-pagination .page2,
+    .slide-radio3:checked~.slider-pagination .page3,
+    .slide-radio4:checked~.slider-pagination .page4,
+    .slide-radio5:checked~.slider-pagination .page5 {
+      background: rgba(0, 0, 0, 1)
+    }
+
+    /* css for sliding  effect when you click on control button*/
+    .slide-radio1:checked~.slider {
+      -webkit-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+
+    .slide-radio2:checked~.slider {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+
+    .slide-radio3:checked~.slider {
+      -webkit-transform: translateX(-200%);
+      transform: translateX(-200%);
+    }
+
+    .slide-radio4:checked~.slider {
+      -webkit-transform: translateX(-300%);
+      transform: translateX(-300%);
+    }
+
+    .slide-radio5:checked~.slider {
+      -webkit-transform: translateX(-400%);
+      transform: translateX(-400%);
+    }
+
+
+    .slide-radio1:checked~.slide1 {
+      display: block;
+    }
+
+    .slide-radio2:checked~.slide2 {
+      display: block;
+    }
+
+    .slide-radio3:checked~.slide3 {
+      display: block;
+    }
+
+    .slide-radio4:checked~.slide4 {
+      display: block;
+    }
+
+    .slide-radio5:checked~.slide5 {
+      display: block;
+    }
+  </style>
+
+
+</head>
+
+<link rel="stylesheet" type="text/css" media="all" href="https://www.asus.com/css/2015/reset.css">
+<link rel="stylesheet" type="text/css" media="all" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" media="all"
+  href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700">
+<link rel="stylesheet" type="text/css" media="all"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+  href="https://www.asus.com/websites/global/productcustomizedTab/5122/v1/global-font.css">
+<link rel="stylesheet" type="text/css" media="all" href="https://www.asus.com/css/2015/alert-info.css">
+<link rel="stylesheet" type="text/css" media="all"
+  href="https://www.asus.com/websites/global/productcustomizedTab/5122/v1/zenui/css/zenui.css">
+<link rel="shortcut icon" href="https://www.asus.com/media/img/favicon.ico">
+<script src="https://www.asus.com/websites/global/productcustomizedTab/5122/v1/zenui/js/zenui.js"></script>
+
+<body>
+  <div id="AWD" class="css-slider-wrapper">
+
+    <input type="radio" name="slider" class="slide-radio1" checked id="slider_1">
+    <input type="radio" name="slider" class="slide-radio2" id="slider_2">
+    <input type="radio" name="slider" class="slide-radio3" id="slider_3">
+    <input type="radio" name="slider" class="slide-radio4" id="slider_4">
+    <input type="radio" name="slider" class="slide-radio5" id="slider_5">
+
+    <div class="slider-pagination">
+      <label for="slider_1" class="page1"></label>
+      <label for="slider_2" class="page2"></label>
+      <label for="slider_3" class="page3"></label>
+      <label for="slider_4" class="page4"></label>
+      <label for="slider_5" class="page5"></label>
+    </div>
+
+    <div class="next control">
+      <label for="slider_1" class="numb1"><i class="fa fa-arrow-circle-right"></i></label>
+      <label for="slider_2" class="numb2"><i class="fa fa-arrow-circle-right"></i></label>
+      <label for="slider_3" class="numb3"><i class="fa fa-arrow-circle-right"></i></label>
+      <label for="slider_4" class="numb4"><i class="fa fa-arrow-circle-right"></i></label>
+      <label for="slider_5" class="numb5"><i class="fa fa-arrow-circle-right"></i></label>
+    </div>
+    <div class="previous control">
+      <label for="slider_1" class="numb1"><i class="fa fa-arrow-circle-left"></i></label>
+      <label for="slider_2" class="numb2"><i class="fa fa-arrow-circle-left"></i></label>
+      <label for="slider_3" class="numb3"><i class="fa fa-arrow-circle-left"></i></label>
+      <label for="slider_4" class="numb4"><i class="fa fa-arrow-circle-left"></i></label>
+      <label for="slider_5" class="numb5"><i class="fa fa-arrow-circle-left"></i></label>
+    </div>
+
+
+
+    <div class="slider slide1">
+
+
+      <!-- section__01 -->
+      <section id="section__kv" class="wd__section section__kv">
+        <div class="section_content content-top always__on__top">
+          <div class="row">
+            <div class="col l12 m12 s12">
+              <div class="wd__content">
+                <figure class="img__kv__logo"></figure>
+                <div class="content__title">Your Intelligent Companion</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figure class="img__kv">
+          <!-- kv__ani -->
+          <!--  -->
+          <div class="kv__ani">
+            <!--  -->
+            <div class="uiContainer uiContainer_0">
+              <div class="uiItemSlick">
+                <!--  -->
+                <div class="uiItem uiItem_0 ">
+                  <figure class="img uiFace"></figure>
+                </div>
+                <div class="uiItem uiItem_1">
+                  <figure class="img uiFace"></figure>
+                </div>
+                <div class="uiItem uiItem_2 ">
+                  <figure class="img uiFace"></figure>
+                </div>
+                <div class="uiItem uiItem_3 ">
+                  <figure class="img uiFace"></figure>
+                </div>
+                <div class="uiItem uiItem_0 ">
+                  <figure class="img uiFace"></figure>
+                </div>
+                <div class="uiItem uiItem_1 ">
+                  <figure class="img uiFace"></figure>
+                </div>
+                <div class="uiItem uiItem_2 ">
+                  <figure class="img uiFace"></figure>
+                </div>
+                <div class="uiItem uiItem_3 ">
+                  <figure class="img uiFace"></figure>
+                </div>
+                <!--  -->
+              </div>
+            </div>
+            <figure class="phone"></figure>
+            <!--  -->
+            <div class="uiContainer uiContainer__phone__ui uiContainer_1">
+              <div class="uiItem uiItem_0" id='scene-1'>
+                <figure class="img uiFace"></figure>
+              </div>
+              <div class="uiItem uiItem_1">
+                <figure class="img uiFace"></figure>
+              </div>
+              <div class="uiItem uiItem_2">
+                <figure class="img uiFace"></figure>
+              </div>
+              <div class="uiItem uiItem_3">
+                <figure class="img uiFace"></figure>
+              </div>
+              <div class="phonebg"> </div>
+            </div>
+            <!-- <figure class="phone_mask"></figure> -->
+          </div>
+          <!--  -->
+        </figure>
+        <div class="section_content content-bottom always__on__top">
+          <div class="row">
+            <div class="col l12 m12 s12">
+              <div class="wd__content">
+                <div class="content__info">
+                  The new ZenUI 5 combines powerful intelligence, unrivaled
+                  clarity and smooth responsiveness to make it the best version yet. We’ve
+                  listened to
+                  you, and made it easier to use than ever, adding great new features and
+                  improving those
+                  you love. And it’s so smart, it knows what you need before you do. Say hello
+                  to
+                  ZenUI 5,
+                  your ever-ready new companion!
+                </div>
+                <!-- <a href="" target="_blank" class="content__link wd__link__arrow"><span>Learn more about</span></a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+
+    <div class="slider slide2">
+
+
+      <!-- ------------section__group__design------------- -->
+      <section id="section__group__design" class="wd__section section__group">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l12 m12 s12">
+              <div class="wd__content always__on__top">
+                <div class="content__slogan text__regular">DESIGN</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section__ customized-->
+      <section id="section__customized" class="wd__section section__customized">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l6 m12 s12">
+              <div class="imgAni">
+                <figure class="img img__customized__1"></figure>
+                <figure class="img progressive-image img__customized__2"></figure>
+                <figure class="img progressive-image img__customized__3"></figure>
+                <figure class="img progressive-image img__customized__4"></figure>
+                <figure class="img progressive-image img__customized__5"></figure>
+              </div>
+            </div>
+            <div class="col awd-table l6 m12 s12">
+              <div class="awd-table-col">
+                <div class="wd__content always__on__top">
+                  <div class="content__slogan slogan-icon">Theme and Lock Screen</div>
+                  <div class="content__title">
+                    Match your style with <span class="no__wrap">fuss-free</span>
+                    customization
+                  </div>
+                  <div class="content__info">
+                    It’s now easier than ever to customize the look of ZenUI 5 to
+                    match your own personal style — no hassle, no fuss! The redesigned
+                    settings
+                    page
+                    makes
+                    it simple to choose multiple sources to enrich your lock-screen
+                    slideshow:
+                    preloaded
+                    wallpapers, a wide variety of online wallpapers, or personal photos from
+                    your
+                    Gallery
+                    or Smart People Album. Lock-screen slideshows now integrate seamlessly
+                    with
+                    your
+                    chosen themes, so you can apply a new theme without losing your existing
+                    photo
+                    slideshow.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section__ clearui-->
+      <section id="section__clearui" class="wd__section section__clearui">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l6 push-l6 m12 s12">
+              <div class="imgAni">
+                <figure class="img img__clearui__1"></figure>
+                <figure class="img progressive-image img__clearui__2"></figure>
+                <figure class="img progressive-image img__clearui__3"></figure>
+              </div>
+            </div>
+            <div class="col awd-table l6 pull-l6 m12 s12">
+              <div class="awd-table-col">
+                <div class="wd__content always__on__top">
+                  <div class="content__slogan slogan-icon">Clear UI Experience</div>
+                  <div class="content__title">Simpler, cleaner and <span class="no__wrap">easier
+                      to
+                      use</span></div>
+                  <div class="content__info">
+                    The brand-new ZenUI 5 is cleaner and simpler than ever
+                    before, making it easier to use and enjoy. We’ve simplified many of the
+                    settings and
+                    fine-tuned the design based on millions of tests, surveys and owner
+                    feedback. You
+                    might not spot all the changes we’ve made, but that’s not important: all
+                    that
+                    matters
+                    is that you notice how much easier and intuitive ZenFone is to use!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+      <!--  -->
+
+
+    </div>
+
+
+    <div class="slider slide3">
+
+
+      <!-- ------------section__group__ inteligent------------- -->
+      <section id="section__group__inteligent" class="wd__section section__group">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l12 m12 s12">
+              <div class="wd__content always__on__top">
+                <div class="content__slogan text__regular">INTELLIGENT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section__ smartscreen-->
+      <section id="section__smartscreen" class="wd__section section__smartscreen">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l6 m12 s12">
+              <div class="imgAni">
+                <figure class="img img__smartscreen__1"></figure>
+                <figure class="img progressive-image img__smartscreen__2"></figure>
+              </div>
+            </div>
+            <div class="col awd-table l6 m12 s12">
+              <div class="awd-table-col">
+                <div class="wd__content always__on__top">
+                  <div class="content__slogan slogan-icon">Smart Screen On</div>
+                  <div class="content__title">Non-stop everything with Smart Screen On</div>
+                  <div class="content__info">
+                    There’s nothing worse than a phone display that turns itself
+                    off when you’re in the middle of doing something fun or important. With
+                    Smart Screen
+                    On, that’ll never happen on ZenUI 5: its clever face detection knows
+                    when
+                    you’re in
+                    front of the screen, and keeps the display turned on. Simple, but smart!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section__ suggestapp-->
+      <section id="section__suggestapp" class="wd__section section__suggestapp">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l6 push-l6 m12 s12">
+              <div class="imgAni">
+                <figure class="img img__suggestapp__1"></figure>
+                <!--
+                <figure class="img progressive-image img__suggestapp__2"></figure>
+                <figure class="img progressive-image img__suggestapp__3"></figure>
+                <figure class="img progressive-image img__suggestapp__4"></figure>
+                <figure class="img progressive-image img__suggestapp__5"></figure>
+            -->
+              </div>
+            </div>
+            <div class="col awd-table l6 pull-l6 m12 s12">
+              <div class="awd-table-col">
+                <div class="wd__content always__on__top">
+                  <div class="content__slogan slogan-icon">Suggest Apps</div>
+                  <div class="content__title">Your personal app assistant</div>
+                  <div class="content__info">
+                    ZenUI 5 not only puts more smart in your smartphone, it puts
+                    more you. Suggest Apps combines the power of machine learning with
+                    personalized
+                    training to analyze your daily app habits and predict the apps you’re
+                    most
+                    likely to
+                    use. It then groups these in an easily-accessible list at the bottom of
+                    the
+                    All Apps
+                    screen. So there’s no need to keep searching for your favorite apps —
+                    Suggest Apps
+                    does it for you!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+      <!-- section__ smartpeople-->
+      <section id="section__smartpeople" class="wd__section section__smartpeople">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l6 m12 s12">
+              <div class="imgAni">
+                <figure class="img img__smartpeople__1"></figure>
+                <figure class="img progressive-image img__smartpeople__2"></figure>
+                <figure class="img progressive-image img__smartpeople__3"></figure>
+                <figure class="img progressive-image img__smartpeople__4"></figure>
+                <!-- <figure class="img progressive-image img__smartpeople__5"></figure> -->
+              </div>
+            </div>
+            <div class="col awd-table l6 m12 s12">
+              <div class="awd-table-col">
+                <div class="wd__content always__on__top">
+                  <div class="content__slogan slogan-icon">Smart People Album</div>
+                  <div class="content__title">Turn your lock screen into a smart photo album
+                  </div>
+                  <div class="content__info">
+                    Fed up with trying to pick and edit the best photos of your
+                    favorite people for the lock screen? ZenUI 5 can automatically select
+                    the
+                    best
+                    photos
+                    of people you specify, and intelligently crop the images to fit on the
+                    lock
+                    screen.
+                    In
+                    just a few easy steps, you can turn your lock screen into a slideshow of
+                    the
+                    people
+                    who matter to you, and turn your ZenFone into a smart digital photo
+                    album
+                    that
+                    showcases the special people in your life!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section__ battery-->
+      <section id="section__battery" class="wd__section section__battery">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l6 push-l6 m12 s12">
+              <div class="imgAni">
+                <figure class="img img__battery__1"></figure>
+                <figure class="img progressive-image img__battery__2"></figure>
+                <figure class="img progressive-image img__battery__3"></figure>
+                <!--
+                        <figure class="img progressive-image img__battery__4"></figure>
+                        <figure class="img progressive-image img__battery__5"></figure>
+                    -->
+              </div>
+            </div>
+            <div class="col awd-table l6 pull-l6 m12 s12">
+              <div class="awd-table-col">
+                <div class="wd__content always__on__top">
+                  <div class="content__slogan slogan-icon">Battery Care Plans</div>
+                  <div class="content__title">
+                    Go further, last longer with intelligent charging
+                  </div>
+                  <div class="content__info">
+                    ZenUI 5 introduces new intelligent charging features to
+                    maximize your battery’s lifespan and provide total protection. Scheduled
+                    Charging
+                    dynamically adjusts the charging rate between times you choose, slowing
+                    down the
+                    battery ageing process. AI Charging automatically determines the best
+                    times to
+                    charge by learning from your charging behavior.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+
+    </div>
+
+
+    <div class="slider slide4">
+
+
+      <!-- ------------section__group__ experience------------- -->
+      <section id="section__group__experience" class="wd__section section__group">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l12 m12 s12">
+              <div class="wd__content always__on__top">
+                <div class="content__slogan text__regular">EXPERIENCE</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section__ optiflex-->
+      <section id="section__optiflex" class="wd__section section__optiflex">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l6 m12 s12">
+              <div class="imgAni">
+                <figure class="img img__optiflex__1"></figure>
+                <!--
+                        <figure class="img progressive-image img__sectionName__2"></figure>
+                        <figure class="img progressive-image img__sectionName__3"></figure>
+                        <figure class="img progressive-image img__sectionName__4"></figure>
+                        <figure class="img progressive-image img__sectionName__5"></figure>
+                    -->
+              </div>
+            </div>
+            <div class="col awd-table l6 m12 s12">
+              <div class="awd-table-col">
+                <div class="wd__content always__on__top">
+                  <div class="content__slogan slogan-icon">OptiFlex 3.0</div>
+                  <div class="content__title">Keep your phone running faster with OptiFlex 3.0
+                  </div>
+                  <div class="content__info">
+                    The secret behind the ever-smooth ZenUI 5 experience is the
+                    brand-new OptiFlex 3.0. This keeps as many of your most-used apps as
+                    possible loaded
+                    in memory, so they’re always ready to go. With ZenUI 5 you’ll never have
+                    to hang around waiting for your favorite apps to load!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section__ gamegenie-->
+      <section id="section__gamegenie" class="wd__section section__gamegenie">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l6 push-l6 m12 s12">
+              <div class="imgAni">
+                <figure class="img img__gamegenie__1"></figure>
+                <figure class="img progressive-image img__gamegenie__2"></figure>
+                <!--
+                        <figure class="img progressive-image img__gamegenie__3"></figure>
+                        <figure class="img progressive-image img__gamegenie__4"></figure>
+                        <figure class="img progressive-image img__gamegenie__5"></figure>
+                    -->
+              </div>
+            </div>
+            <div class="col awd-table l6 pull-l6 m12 s12">
+              <div class="awd-table-col">
+                <div class="wd__content always__on__top">
+                  <div class="content__slogan slogan-icon">Game Genie</div>
+                  <div class="content__title">Level up your gaming with Game Genie</div>
+                  <div class="content__info">
+                    ZenUI 5 includes the latest Game Genie, your gaming sidekick.
+                    Use Speed Booster to enjoy an optimized, lag-free performance, or use
+                    Search to find
+                    the hottest cheats and walkthroughs. Live-stream your gameplay like a
+                    pro or record it
+                    to watch again later and analyze your moves or rethink your strategy —
+                    and if you
+                    don’t want to show your face to your opponents, just choose a still
+                    image instead of
+                    using the front camera. And Game Genie now lets you mute alerts for
+                    uninterrupted fun. There’s never a dull game with Game Genie!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+      <!-- section__ twinapp-->
+      <section id="section__twinapp" class="wd__section section__twinapp">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l6 m12 s12">
+              <div class="imgAni">
+                <figure class="img img__twinapp__1"></figure>
+                <figure class="img progressive-image img__twinapp__2"></figure>
+                <!--
+                        <figure class="img progressive-image img__twinapp__2"></figure>
+                        <figure class="img progressive-image img__twinapp__3"></figure>
+                        <figure class="img progressive-image img__twinapp__4"></figure>
+                        <figure class="img progressive-image img__twinapp__5"></figure>
+                    -->
+              </div>
+            </div>
+            <div class="col awd-table l6 m12 s12">
+              <div class="awd-table-col">
+                <div class="wd__content always__on__top">
+                  <div class="content__slogan slogan-icon">Twin Apps</div>
+                  <div class="content__title">Two accounts, one app, zero hassle</div>
+                  <div class="content__info">
+                    With the latest Twin Apps feature, you can easily create
+                    copies of supported apps on your phone, so you can stay logged in to two
+                    accounts
+                    simultaneously — whether it’s work and personal accounts on social media
+                    or messaging,
+                    or two gaming accounts to boost your scores and get faster upgrades. And
+                    with
+                    brand-new features such as simultaneous dual login for your original and
+                    cloned games on Google Play Games, and the ability to back up the data
+                    of cloned
+                    social apps — such as Line — to Google Drive, you can do even more. The
+                    days of constantly switching accounts are over!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+
+    <div class="slider slide5">
+
+
+      <!-- ------------section__group__ privacy privac-------------y-->
+      <section id="section__group__privacy" class="wd__section section__group">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l12 m12 s12">
+              <div class="wd__content always__on__top">
+                <div class="content__slogan text__regular">PRIVACY</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section__ faceunlock-->
+      <section id="section__faceunlock" class="wd__section section__faceunlock">
+        <div class="section_content">
+          <div class="row">
+            <div class="col l6 m12 s12">
+              <div class="imgAni">
+                <figure class="img img__faceunlock__1"></figure>
+                <figure class="img progressive-image img__faceunlock__2"></figure>
+                <figure class="img progressive-image img__faceunlock__3"></figure>
+              </div>
+            </div>
+            <div class="col awd-table l6 m12 s12">
+              <div class="awd-table-col">
+                <div class="wd__content always__on__top">
+                  <div class="content__slogan slogan-icon">Face Unlock</div>
+                  <div class="content__title">Enjoy a more private experience</div>
+                  <div class="content__info">
+                    ZenUI 5 takes your privacy and security very seriously. The
+                    face unlock feature not only allows near-instant phone unlocking, but it
+                    also works
+                    with apps and the Hidden Cabinet to keep prying eyes away from your
+                    personal stuff.
+                    Everything’s more private with face unlock! And with the new Lift to
+                    Check Phone motion gesture, you don’t even have to press any buttons
+                    when you want to unlock your phone.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>
