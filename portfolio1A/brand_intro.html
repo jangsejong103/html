@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>포레나 :: 소개</title>
+</head>
+<link href="https://github.com/gshn/fonts/blob/master/NotoSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/SpoqaHanSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumBarunGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumSquare/fonts.css" rel="stylesheet">
+
+<style>
+    * {
+        text-align: center;
+        text-decoration: none;
+        list-style: none;
+        background-color: #eee;
+        margin: 0 auto;
+        padding: 0;
+        vertical-align: middle;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    a,
+    b,
+    p,
+    br,
+    ul,
+    li,
+    font,
+    div {
+        background: transparent;
+    }
+
+    .backimage {
+        width: 100%;
+        min-width: 1600px;
+        height: 120px;
+        overflow: hidden;
+        vertical-align: middle;
+        background-color: black;
+        background-image: url(resources/Motif_B2.jpg);
+        background-repeat: repeat-x;
+    }
+
+    .menus {
+        position: relative;
+        display: inline-block;
+        top: -110px;
+        background-color: transparent;
+    }
+
+    .menu_upper {
+        width: 1600px;
+        height: 60px;
+        background-color: transparent;
+        color: white;
+        font-size: 18px;
+    }
+
+    .menu_upper input {
+        width: 320px;
+        height: 56px;
+        float: left;
+        font-size: 18px;
+        color: white;
+        background-color: transparent;
+        border-bottom: 4px solid #8A8D8F;
+    }
+
+    .menu_upper input::placeholder {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .menu_upper ul {
+        float: right;
+        background-color: transparent;
+        margin-right: 20px;
+    }
+
+    .menu_upper ul li {
+        width: 120px;
+        height: 40px;
+        padding: 10px;
+        line-height: 40px;
+        float: left;
+        background-color: transparent;
+    }
+
+    .menu_upper a {
+        color: white;
+    }
+
+    .menu_downer {
+        width: 1600px;
+        height: 100px;
+        background-color: white;
+        font-size: 20px;
+    }
+
+    .brand_logo {
+        float: left;
+        background-color: transparent;
+        padding: 30px;
+    }
+
+    .downer_category ul {
+        float: right;
+        background-color: transparent;
+        margin-right: 7.5px;
+        padding: 20px;
+        line-height: 60px;
+    }
+
+    .downer_category ul li {
+        width: 150px;
+        height: 60px;
+        margin-right: 6px;
+        float: left;
+        background-color: transparent;
+    }
+
+    .downer_list {
+        width: 1560px;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.75);
+        float: right;
+        margin: 0 auto;
+        padding-right: 40px;
+        top: 160px;
+        z-index: 1;
+    }
+
+    .downer_list ul {
+        background-color: transparent;
+        text-align: right;
+        margin: 0 auto;
+        padding: 10px 0px 10px 0px;
+    }
+
+    .downer_list ul li {
+        display: inline-block;
+        width: 150px;
+        vertical-align: top;
+        font-size: 16px;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+    .downer_list ul li ul li {
+        margin: 0 auto;
+        padding: 5px 0px 5px 0px;
+    }
+
+    .downer_category ul li:hover {
+        height: 56px;
+        color: #003057;
+        border-bottom: 4px solid #003057;
+    }
+
+    .downer_category a,
+    .downer_list a {
+        color: black;
+    }
+
+    .downer_category ul li:hover a {
+        color: #003057;
+    }
+
+    .downer_list ul li ul li:hover,
+    .downer_list ul li ul li:hover a {
+        color: white;
+        background-color: #003057;
+    }
+
+    input {
+        border: none;
+    }
+
+    .subs {
+        width: 1600px;
+        height: 200px;
+        overflow: hidden;
+        display: table;
+        background-image: url(resources/Motif_A1.jpg);
+        background-repeat: repeat;
+        position: relative;
+        top: -110px;
+    }
+
+    .subs p {
+        display: table-cell;
+        color: white;
+        font-size: 20px;
+        font-family: 'NanumSquare', sans-serif;
+    }
+
+    .subs b {
+        font-size: 40px;
+        font-family: 'NanumSquare', sans-serif;
+    }
+
+    .content {
+        width: 1600px;
+        margin-top: 40px;
+        position: relative;
+        top: -100px;
+    }
+
+    .content hr {
+        border: 1px solid #8A8D8F;
+    }
+
+    .philos_table {
+        vertical-align: middle;
+    }
+
+    .philos_cell_intro {
+        width: 1500px;
+        height: 250px;
+    }
+
+    .philos_cell_intro p {
+        font-family: 'NanumSquare', sans-serif;
+        font-size: 20px;
+    }
+
+    .philos_cell_intro b {
+        font-family: 'NanumSquare', sans-serif;
+        font-size: 36px;
+    }
+
+    .philos_cell {
+        width: 500px;
+        height: 250px;
+        color: #003057;
+        overflow: hidden;
+    }
+
+    .philos_cell p {
+        font-family: 'NanumSquare', sans-serif;
+        font-size: 16px;
+    }
+
+    .philos_cell b {
+        font-family: 'NanumSquare', sans-serif;
+        font-size: 24px;
+    }
+
+    footer {
+        width: 1600px;
+        height: 120px;
+        border-top: 1px solid #5C5C5C;
+    }
+
+    footer img,
+    footer p {
+        float: left;
+        margin: 8px;
+    }
+
+    footer p {
+        text-align: left;
+        margin-top: 32px;
+    }
+
+    footer ul {
+        width: 640px;
+        height: 24px;
+        margin: 4px;
+        float: right;
+        text-align: right;
+        margin-top: 16px;
+    }
+
+    footer li {
+        display: inline-block;
+        padding: 8px;
+    }
+
+    footer a {
+        color: black;
+    }
+</style>
+
+<script language="JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script language="JavaScript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".downer_category").hover(
+            function () {
+                $(".downer_list").stop().slideDown(0);
+            },
+            function () {
+                $(".downer_list").stop().slideUp(0);
+            }
+        );
+
+        $(".downer_list").hover(
+            function () {
+                $(".downer_list").stop().slideDown(0);
+            },
+            function () {
+                $(".downer_list").stop().slideUp(0);
+            }
+        );
+    });
+</script>
+
+<body>
+
+    <div class="backimage"></div>
+
+    <div class="menus">
+        <header class="menu_upper">
+            <div>
+                <input type="text" placeholder="빠른단지검색">
+                <ul>
+                    <a href="login.html">
+                        <li>로그인</li>
+                    </a>
+                    <a href="222.html">
+                        <li>회원가입</li>
+                    </a>
+                    <a href="events.html">
+                        <li>드림이벤트</li>
+                    </a>
+                </ul>
+            </div>
+        </header>
+        <header class="menu_downer">
+            <a href="index.html"><img src="resources/Forena_Brand.png" class="brand_logo" id="brand_logo"></a>
+            <div class="downer_category">
+                <ul>
+                    <a href="brand_intro.html">
+                        <li>브랜드</li>
+                    </a>
+                    <a href="subdivision_info.html">
+                        <li>단지정보</li>
+                    </a>
+                    <a href="support_notice.html">
+                        <li>고객센터</li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="downer_list" style="display: none;">
+                <ul>
+                    <li>
+                        <ul>
+                            <a href="brand_intro.html">
+                                <li>소개</li>
+                            </a>
+                            <a href="brand_graphic.html">
+                                <li>그래픽</li>
+                            </a>
+                            <a href="222.html">
+                                <li>패밀리 브랜드</li>
+                            </a>
+                            <a href="222.html">
+                                <li>미디어</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <a href="subdivision_info.html">
+                                <li>단지정보</li>
+                            </a>
+                            <a href="subdivision_calendar.html">
+                                <li>종합 캘린더</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <a href="support_notice.html">
+                                <li>공지사항</li>
+                            </a>
+                            <a href="222.html">
+                                <li>고객문의</li>
+                            </a>
+                            <a href="support_afterservice.html">
+                                <li>A/S 문의</li>
+                            </a>
+                            <a href="222.html">
+                                <li>서식 자료실</li>
+                            </a>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <div class="subs">
+        <p>
+            <b>FORENA</b><br><br>
+            특별한 일상의 시작
+        </p>
+    </div>
+
+    <div class="content">
+        <br>
+        <img src="resources/brand_sect_1.png">
+        <br><br><br><br>
+        <hr>
+        <table class="philos_table">
+            <br><br>
+            <tr>
+                <td colspan="3" class="philos_cell_intro">
+                    <p>
+                        포레나의 철학<br>
+                        <b>Perfection of Life</b><br><br>
+                        포레나의 브랜드 철학은 'Perfection of Life(삶의 완성)'으로 3가지 핵심가치(여유, 배려, 연결)을 내포합니다<br>
+                        포레나는 주거공간에서 누리는 생활의 여유와 세심한 배려 그리고 사람과 공간, 새로움과의 연결을 통해<br>
+                        고객들에게 특별한 일상의 시작을 선사하고자 합니다<br><br>
+                    </p>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td class="philos_cell">
+                    <p>
+                        <b>Comfort</b><br><br>
+                        특별함 속에서 누리는 생활의 여유
+                    </p>
+                </td>
+                <td class="philos_cell">
+                    <p>
+                        <b>Care</b><br><br>
+                        세심한 배려를 통한 감동
+                    </p>
+                </td>
+                <td class="philos_cell">
+                    <p>
+                        <b>Connecting</b><br><br>
+                        사람과 공간, 새로움과의 연결
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="philos_cell">
+                    <img src="resources/brand_sect_2A.jpg" width="500px">
+                </td>
+                <td class="philos_cell">
+                    <img src="resources/brand_sect_2B.jpg" width="500px">
+                </td>
+                <td class="philos_cell">
+                    <img src="resources/brand_sect_2C.jpg" width="500px">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        <img src="resources/Hanhwa_ENC.png" width="240px">
+
+        <p>
+            대표전화 : 02.2055.6000 / 고객센터 080.729.2400 / 서울시 영등포구 여의대로 24 전경련회관<br>
+            COPYRIGHT 2019. HANHWA ENGINEERING & CONSTRUCTION Corp.
+        </p>
+
+        <ul>
+            <li><a href="222.html">
+                    개인정보처리방침
+                </a></li>
+            <li><a href="222.html">
+                    이메일무단수집거부
+                </a></li>
+            <li><a href="222.html">
+                    회원약관
+                </a></li>
+            <li><a href="222.html">
+                    사이트맵
+                </a></li>
+        </ul>
+        <ul>
+            <li><a href="https://blog.naver.com/hanwha_enc" target="_blank">
+                    <img src="resources/shortcut_naverblog.png" height="20px">
+                    네이버 블로그
+                </a></li>
+            <li><a href="https://m.post.naver.com/hanwha_enc" target="_blank">
+                    <img src="resources/shortcut_naverpost.png" height="20px">
+                    네이버 포스트
+                </a></li>
+            <li><a href="https://www.youtube.com/channel/UCYjfgiex4aTgDgcn0zsU-MA" target="_blank">
+                    <img src="resources/shortcut_youtube.png" height="20px">
+                    유튜브
+                </a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

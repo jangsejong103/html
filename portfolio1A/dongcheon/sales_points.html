@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>꿈에그린 :: 수지 동천</title>
+</head>
+<link href="https://github.com/gshn/fonts/blob/master/NotoSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/SpoqaHanSans/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumBarunGothic/fonts.css" rel="stylesheet">
+<link href="https://github.com/gshn/fonts/blob/master/NanumSquare/fonts.css" rel="stylesheet">
+
+<style>
+    * {
+        text-align: center;
+        text-decoration: none;
+        list-style: none;
+        background-color: white;
+        margin: 0 auto;
+        padding: 0;
+        vertical-align: middle;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    a,
+    b,
+    p,
+    br,
+    ul,
+    li,
+    font,
+    div {
+        background: transparent;
+    }
+
+    .backimage {
+        width: 100%;
+        min-width: 1600px;
+        height: 120px;
+        overflow: hidden;
+        vertical-align: middle;
+        background-color: black;
+        background-image: url(../resources/Motif_0-1.jpg);
+        background-repeat: repeat-x;
+    }
+
+    .menus {
+        position: relative;
+        display: inline-block;
+        top: -110px;
+        background-color: transparent;
+    }
+
+    .menu_upper {
+        width: 1600px;
+        height: 60px;
+        background-color: transparent;
+        color: white;
+        font-size: 18px;
+    }
+
+    .menu_upper .upper_left {
+        float: left;
+        background-color: transparent;
+        margin-left: 20px;
+    }
+
+    .menu_upper .upper_right {
+        float: right;
+        background-color: transparent;
+        margin-right: 20px;
+    }
+
+    .upper_left ul li {
+        width: 400px;
+    }
+
+    .upper_right ul li {
+        width: 200px;
+    }
+
+    .menu_upper ul li {
+        height: 40px;
+        padding: 10px;
+        line-height: 40px;
+        float: left;
+        background-color: transparent;
+    }
+
+    .menu_downer {
+        width: 1600px;
+        height: 100px;
+        background-color: #eee;
+        font-size: 20px;
+    }
+
+    .brand_logo {
+        float: left;
+        background-color: transparent;
+        padding: 30px;
+    }
+
+    .downer_category ul {
+        float: right;
+        background-color: transparent;
+        margin-right: 7.5px;
+        padding: 20px;
+        line-height: 60px;
+    }
+
+    .downer_category ul li {
+        width: 150px;
+        height: 60px;
+        margin-right: 6px;
+        float: left;
+        background-color: transparent;
+    }
+
+    .downer_list {
+        width: 1560px;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.75);
+        float: right;
+        margin: 0 auto;
+        padding-right: 40px;
+        top: 160px;
+        z-index: 1;
+    }
+
+    .downer_list ul {
+        background-color: transparent;
+        text-align: right;
+        margin: 0 auto;
+        padding: 10px 0px 10px 0px;
+    }
+
+    .downer_list ul li {
+        display: inline-block;
+        width: 150px;
+        vertical-align: top;
+        font-size: 16px;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+    .downer_list ul li ul li {
+        margin: 0 auto;
+        padding: 5px 0px 5px 0px;
+    }
+
+    .downer_category ul li:hover {
+        height: 56px;
+        color: #007EBE;
+        border-bottom: 4px solid #007EBE;
+    }
+
+    .downer_category a,
+    .downer_list a {
+        color: black;
+    }
+
+    .downer_category ul li:hover a {
+        color: #007EBE;
+    }
+
+    .downer_list ul li ul li:hover,
+    .downer_list ul li ul li:hover a {
+        color: white;
+        background-color: #007EBE;
+    }
+
+    input {
+        border: none;
+    }
+
+    .subs {
+        width: 1600px;
+        height: 200px;
+        overflow: hidden;
+        display: table;
+        background-color: black;
+        background-image: url(../resources/Motif_0-2.jpg);
+        background-repeat: repeat;
+        position: relative;
+        top: -110px;
+    }
+
+    .subs p {
+        display: table-cell;
+        color: white;
+        font-size: 20px;
+        font-family: 'NanumSquare', sans-serif;
+    }
+
+    .subs b {
+        font-size: 40px;
+        font-family: 'NanumSquare', sans-serif;
+    }
+
+    .content {
+        width: 1600px;
+        margin-top: 40px;
+        position: relative;
+        top: -100px;
+    }
+
+    #download_button {
+        width: 200px;
+        height: 40px;
+        background-color: #003057;
+        color: white;
+    }
+
+    #download_button p {
+        width: 200px;
+        height: 40px;
+        display: table-cell;
+    }
+
+    .content table tr td {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    footer {
+        width: 1600px;
+        height: 120px;
+        border-top: 1px solid #5C5C5C;
+    }
+
+    footer img,
+    footer p {
+        float: left;
+        margin: 8px;
+    }
+
+    footer p {
+        text-align: left;
+        margin-top: 32px;
+    }
+
+    footer ul {
+        width: 640px;
+        height: 24px;
+        margin: 4px;
+        float: right;
+        text-align: right;
+        margin-top: 16px;
+    }
+
+    footer li {
+        display: inline-block;
+        padding: 8px;
+    }
+
+    footer a {
+        color: black;
+    }
+</style>
+
+<script language="JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script language="JavaScript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".downer_category").hover(
+            function () {
+                $(".downer_list").stop().slideDown(0);
+            },
+            function () {
+                $(".downer_list").stop().slideUp(0);
+            }
+        );
+
+        $(".downer_list").hover(
+            function () {
+                $(".downer_list").stop().slideDown(0);
+            },
+            function () {
+                $(".downer_list").stop().slideUp(0);
+            }
+        );
+    });
+</script>
+
+<body>
+
+    <div class="backimage"></div>
+
+    <div class="menus">
+        <header class="menu_upper">
+            <ul class="upper_left">
+                <li>강남·판교를 뛰어넘을 프리미엄 동천시대, 수지 동천 꿈에그린</li>
+            </ul>
+            <ul class="upper_right">
+                <li>Tel - 1600.4900</li>
+            </ul>
+        </header>
+        <header class="menu_downer">
+            <a href="index.html"><img src="../resources/Dreamin-green_Brand.png" class="brand_logo" id="brand_logo"></a>
+            <div class="downer_category">
+                <ul>
+                    <a href="overview.html">
+                        <li>사업</li>
+                    </a>
+                    <a href="sales_points.html">
+                        <li>분양</li>
+                    </a>
+                    <a href="array.html">
+                        <li>상품</li>
+                    </a>
+                    <a href="housetype_apart.html">
+                        <li>세대</li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="downer_list" style="display: none;">
+                <ul>
+                    <li>
+                        <ul>
+                            <a href="overview.html">
+                                <li>개요</li>
+                            </a>
+                            <a href="environment.html">
+                                <li>입지환경</li>
+                            </a>
+                            <a href="premium.html">
+                                <li>프리미엄</li>
+                            </a>
+                            <a href="brand.html">
+                                <li>브랜드</li>
+                            </a>
+                            <a href="location.html">
+                                <li>오시는 길</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <a href="sales_points.html">
+                                <li>분양안내</li>
+                            </a>
+                            <a href="../222.html">
+                                <li>분양안내 요약</li>
+                            </a>
+                            <a href="../222.html">
+                                <li>관심고객등록</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <a href="array.html">
+                                <li>동·호수 배치도</li>
+                            </a>
+                            <a href="community.html">
+                                <li>커뮤니티</li>
+                            </a>
+                            <a href="system.html">
+                                <li>특화 시스템</li>
+                            </a>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <a href="housetype_apart.html">
+                                <li>아파트</li>
+                            </a>
+                            <a href="housetype_office.html">
+                                <li>오피스텔</li>
+                            </a>
+                            <a href="../222.html">
+                                <li>e-모델하우스</li>
+                            </a>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <div class="subs">
+        <p>
+            <b>분양안내</b>
+        </p>
+    </div>
+
+    <div class="content">
+        <img src="../resources/dongcheon-schedule_(PC).jpg"><br><br>
+
+        <table>
+            <tr>
+                <td>
+                    <a href="https://hanwha.dreamapt.co.kr/bunyang/dongcheon//common/pdf/gonggo_apt-1.pdf">
+                        <div id="download_button">
+                            <p>아파트 공급안내문</p>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a href="https://hanwha.dreamapt.co.kr/bunyang/dongcheon//common/pdf/gonggo_office-1.pdf">
+                        <div id="download_button">
+                            <p>오피스텔 공급안내문</p>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://hanwha.dreamapt.co.kr/bunyang/dongcheon//common/pdf/gonggo_apt-2.pdf">
+                        <div id="download_button">
+                            <p>아파트 모집공고문</p>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a href="https://hanwha.dreamapt.co.kr/bunyang/dongcheon//common/pdf/gonggo_office-2.pdf">
+                        <div id="download_button">
+                            <p>오피스텔 모집공고문</p>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://hanwha.dreamapt.co.kr/bunyang/dongcheon//common/pdf/gonggo_apt-3.pdf">
+                        <div id="download_button">
+                            <p>아파트 청약안내문</p>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a href="https://hanwha.dreamapt.co.kr/bunyang/dongcheon//common/pdf/gonggo_office-3.pdf">
+                        <div id="download_button">
+                            <p>오피스텔 청약안내문</p>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <footer>
+        <img src="../resources/Hanhwa_ENC.png" width="240px">
+
+        <p>
+            대표전화 : 02.2055.6000 / 고객센터 080.729.2400 / 서울시 영등포구 여의대로 24 전경련회관<br>
+            COPYRIGHT 2019. HANHWA ENGINEERING & CONSTRUCTION Corp.
+        </p>
+
+        <ul>
+            <li><a href="222.html">
+                    개인정보처리방침
+                </a></li>
+            <li><a href="222.html">
+                    이메일무단수집거부
+                </a></li>
+            <li><a href="222.html">
+                    회원약관
+                </a></li>
+            <li><a href="222.html">
+                    사이트맵
+                </a></li>
+        </ul>
+        <ul>
+            <li><a href="https://blog.naver.com/hanwha_enc" target="_blank">
+                    <img src="../resources/shortcut_naverblog.png" height="20px">
+                    네이버 블로그
+                </a></li>
+            <li><a href="https://m.post.naver.com/hanwha_enc" target="_blank">
+                    <img src="../resources/shortcut_naverpost.png" height="20px">
+                    네이버 포스트
+                </a></li>
+            <li><a href="https://www.youtube.com/channel/UCYjfgiex4aTgDgcn0zsU-MA" target="_blank">
+                    <img src="../resources/shortcut_youtube.png" height="20px">
+                    유튜브
+                </a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
